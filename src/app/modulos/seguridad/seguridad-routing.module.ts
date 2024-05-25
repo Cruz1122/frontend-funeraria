@@ -5,24 +5,29 @@ import { ErrorDeServidorComponent } from 'src/app/publico/errores/error-de-servi
 import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
 import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
+import { IdentificacionTwofaComponent } from './identificacion-twofa/identificacion-twofa.component';
 
 const routes: Routes = [
   {
     path: 'identificar-usuario',
-    component: IdentificacionUsuarioComponent
+    component: IdentificacionUsuarioComponent,
   },
   {
     path: 'cambiar-clave',
-    component: CambioClaveComponent
+    component: CambioClaveComponent,
   },
   {
     path: 'recuperar-clave',
-    component: RecuperarClaveComponent
+    component: RecuperarClaveComponent,
   },
   {
     path: 'cerrar-sesion',
-    component: CerrarSesionComponent
-  }
+    component: CerrarSesionComponent,
+  },
+  {
+    path: '2fa',
+    component: IdentificacionTwofaComponent,
+  },
 ];
 
 @NgModule({
