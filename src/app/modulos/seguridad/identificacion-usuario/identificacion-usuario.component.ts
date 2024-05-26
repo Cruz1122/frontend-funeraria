@@ -34,8 +34,8 @@ export class IdentificacionUsuarioComponent {
   }
 
 
-  IdentificarUsuario(){
-    if(this.fGroup.invalid) {
+  IdentificarUsuario() {
+    if (this.fGroup.invalid) {
       alert('Datos invalidos')
     } else {
 
@@ -46,7 +46,10 @@ export class IdentificacionUsuarioComponent {
       this.servicioSeguridad.IdentificarUsuario(usuario, claveCifrada).subscribe({
         next: (datos: UsuarioModel) => {
           console.log(datos);
-          this.router.navigate(['/seguridad/2fa']);
+          if (this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)) {
+            console.log('Usuario identificado');
+            this.router.navigate(['/seguridad/2fa']);
+          }
         },
         error: (err) => {
           console.log(err);
