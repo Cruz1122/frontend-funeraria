@@ -46,7 +46,7 @@ export class IdentificacionTwofaComponent {
       this.servicioSeguridad.ValidarCodigo2FA(this.idUsuario, codigo2fa).subscribe({
         next: (datos:UsuarioValidadoModel) => {
           console.log(datos);
-          this.servicioSeguridad.almacenarDatosUsuarioValidado(datos);
+          this.servicioSeguridad.AlmacenarDatosUsuarioValidado(datos);
           this.router.navigate(['']);
         },
         error: (err) => {
