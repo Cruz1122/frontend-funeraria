@@ -7,6 +7,7 @@ import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.compo
 import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
 import { IdentificacionTwofaComponent } from './identificacion-twofa/identificacion-twofa.component';
 import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
+import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,11 @@ const routes: Routes = [
   {
     path: 'registro-publico',
     component: RegistroPublicoUsuariosComponent,
-  }
+  },
+  {
+    path: 'validar-hash-usuario-publico/:hash',
+    component: ValidarHashUsuarioPublicoComponent,
+  },
 ];
 
 @NgModule({

@@ -55,6 +55,7 @@ export class RegistroPublicoUsuariosComponent {
       };
       this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({        
         next: (respuesta:UsuarioModel) => {
+          console.log(datos);
           alert("Registro correcto, se ha enviado un mensaje para validar su direccion de correo electronico")
         },
         error: (err) => {
