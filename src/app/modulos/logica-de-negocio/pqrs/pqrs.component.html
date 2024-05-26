@@ -1,0 +1,59 @@
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="tipoUsuario" id="tipoUsuario" type="text" class="validate" />
+          <label for="tipoUsuario">Tipo de usuario</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="documento" id="documento" type="text" class="validate" />
+          <label for="documento">Numero de documento</label>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="nombres" id="nombres" type="text" class="validate" />
+          <label for="nombres">Nombres</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="apellidos" id="apellidos" type="text" class="validate" />
+          <label for="apellidos">Apellidos</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="email" id="email" type="email" class="validate" />
+          <label for="email">Correo</label>
+        </div>
+        <div class="input-field col s3">
+          <input formControlName="telefono" id="telefono" type="text" class="validate" />
+          <label for="telefono">Teléfono</label>
+        </div>
+        <div class="input-field col s3">
+            <input formControlName="asunto" id="asunto" type="text" class="validate" />
+            <label for="asunto">Asunto</label>
+        </div>
+      </div>
+        
+      <div class="row"> 
+        <div class="input-field col s12"> 
+          <textarea formControlName="mensaje" id="mensaje" class="materialize-textarea"></textarea>
+          <label for="mensaje">Mensaje</label>
+      </div>
+
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <!-- <button
+            class="btn waves-effect waves-light"
+            type="button"
+             (click)="Registrarse()" 
+          >
+            Registrarse
+            <i class="material-icons right">send</i>
+          </button> -->
+        </div>
+      </div>
+    </form>
+  </div>

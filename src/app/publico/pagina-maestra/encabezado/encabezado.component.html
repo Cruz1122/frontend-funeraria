@@ -3,6 +3,7 @@
     <a routerLink="/inicio" class="brand-logo">Logo</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a *ngIf="!sesionActiva" routerLink="/seguridad/identificar-usuario">Acceder</a></li>
+      <li><a routerLink="/logica-de-negocio/pqrs">Contactanos</a></li>
       <li><a *ngIf="sesionActiva" routerLink="/seguridad/cambiar-clave">Cambiar Clave</a></li>
       <li><a *ngIf="sesionActiva" routerLink="/seguridad/cerrar-sesion">Cerrar Sesion</a></li>
     </ul>
