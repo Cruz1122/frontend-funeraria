@@ -33,6 +33,7 @@ export class RegistroPublicoUsuariosComponent {
         correo: ['', [Validators.required, Validators.email]],
         lugarResidencia: ['', [Validators.required]],
         telefono: ['', [Validators.minLength(9)]],
+        modoRecuperacionCuenta: ['', [Validators.required]]
       });
     }
 
@@ -43,19 +44,21 @@ export class RegistroPublicoUsuariosComponent {
       let campos = this.ObtenerFormGroup;
       let datos = {
         primerNombre: campos['primerNombre'].value,
-        segundoNombre:campos['segundoNombre'].value,
+        segundoNombre: campos['segundoNombre'].value,
         primerApellido: campos['primerApellido'].value,
         segundoApellido: campos['segundoApellido'].value,
-        correo: campos['correo'].value, 
         lugarResidencia: campos['lugarResidencia'].value,
-        telefono: campos['telefono'].value
-      }
-      this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({
+        correo: campos['correo'].value,
+        telefono: campos['telefono'].value,
+        fechaCreacion: new Date(),
+        modoRecuperacionCuenta: campos['modoRecuperacionCuenta'].value
+      };
+      this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({        
         next: (respuesta:UsuarioModel) => {
-          alert("Registro correcto, se ah enviadoun mensaje para validar su direccion de correo electronico")
+          alert("Registro correcto, se ha enviado un mensaje para validar su direccion de correo electronico")
         },
         error: (err) => {
-          alert("se ha producido un error en el registro.")
+          alert("Se ha producido un error en el registro.")
         }
         }); 
     }

@@ -48,6 +48,7 @@ export class SeguridadService {
   }
 
   RegistrarUsuarioPublico(datos: any):Observable<UsuarioModel> {
+    console.log(datos);
     return this.http.post<UsuarioModel>(`${this.urlBase}usuario-publico`, datos);
   }
 
