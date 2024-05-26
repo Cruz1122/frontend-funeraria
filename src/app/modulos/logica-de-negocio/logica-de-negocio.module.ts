@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogicaDeNegocioRoutingModule } from './logica-de-negocio-routing.module';
 import { PqrsComponent } from './pqrs/pqrs.component';
 
@@ -11,7 +11,9 @@ import { PqrsComponent } from './pqrs/pqrs.component';
   ],
   imports: [
     CommonModule,
-    LogicaDeNegocioRoutingModule
+    LogicaDeNegocioRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class LogicaDeNegocioModule { }
