@@ -2,15 +2,11 @@
 
     text-align: center;
     padding-bottom: 30px;
-    
-    
 }
 .formulario {
 
     padding-left: 20%;
     padding-right: 20%;
-   
-    
 }
 h3 {
     text-align: center;
@@ -19,4 +15,8 @@ h3 {
 .btn {
     background-color: #66B9A0;
     font-weight: bold;
+}
+.browser-default {
+    border: 1px solid #66B9A0;
+    margin-top: 10px ;
 }
