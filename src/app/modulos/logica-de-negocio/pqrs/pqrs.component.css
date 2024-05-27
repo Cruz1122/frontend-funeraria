@@ -1,0 +1,22 @@
+.Enviar {
+
+    text-align: center;
+    padding-bottom: 30px;
+    
+    
+}
+.formulario {
+
+    padding-left: 20%;
+    padding-right: 20%;
+   
+    
+}
+h3 {
+    text-align: center;
+    font-weight: bold;
+}
+.btn {
+    background-color: #66B9A0;
+    font-weight: bold;
+}
