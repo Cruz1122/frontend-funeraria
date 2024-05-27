@@ -1,0 +1,29 @@
+.navbar {
+    background-color: #66B9A0;
+    position: fixed
+}
+.logo {
+    max-width: 90%;
+    max-height: 90%;
+    margin-left: 50px;
+    margin-top: 2.5px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.brand-logo {
+    margin-left: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+#nav-mobile li a {
+    color: black; /* Cambia este valor al color deseado */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#nav-mobile {
+    margin-right: 50px;
+}
+

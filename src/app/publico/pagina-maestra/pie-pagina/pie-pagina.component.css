@@ -1,0 +1,7 @@
+.page-footer {
+    background-color: #66B9A0;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+} 
