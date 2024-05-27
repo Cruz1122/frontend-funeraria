@@ -3,8 +3,8 @@
     <img class="logo" src="https://i.imgur.com/Z0Cu0eA.jpeg" alt="Logo Funeraria Digital">
     <a routerLink="/inicio" class="brand-logo">Funeraria Digital</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="/logica-de-negocio/pqrs">Contáctanos</a></li>
       <li><a *ngIf="!sesionActiva" routerLink="/seguridad/identificar-usuario">Acceder</a></li>
-      <li><a routerLink="/logica-de-negocio/pqrs">Contactanos</a></li>
       <!-- <li><a *ngIf="sesionActiva" routerLink="/seguridad/cambiar-clave">Cambiar Clave</a></li> -->
       <li><a *ngIf="sesionActiva" routerLink="/seguridad/cerrar-sesion">Cerrar Sesion</a></li>
     </ul>
