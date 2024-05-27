@@ -16,7 +16,11 @@ h3 {
     background-color: #66B9A0;
     font-weight: bold;
 }
+
 .browser-default {
+    margin-top: 10px;
+    border-color: #BABABA;
+}
+.browser-default:focus {
     border: 1px solid #66B9A0;
-    margin-top: 10px ;
 }
