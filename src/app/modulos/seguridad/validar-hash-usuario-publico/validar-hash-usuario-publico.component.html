@@ -1,2 +1,9 @@
-<h5 *ngIf="!validado">Validando..................</h5>
-<h1 *ngIf="validado">Validado correctamente :D</h1>
+<div  *ngIf="!validado" class="validacion center-align">
+    <h1>Validando...</h1>
+    <h2>Espera mientras validamos tu correo electrónico.</h2>
+</div>
+
+<div *ngIf="validado" class="validacion center-align">
+    <h1>Validado correctamente</h1>
+    <h2 *ngIf="validado">Ya puedes salir de esta página e iniciar sesión.</h2>
+</div>

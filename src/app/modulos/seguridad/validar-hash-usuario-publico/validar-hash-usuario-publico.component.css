@@ -1,0 +1,16 @@
+.validacion {
+    margin: 20px;
+    margin-top: 185px;
+    margin-bottom: 185px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 30px;
+}

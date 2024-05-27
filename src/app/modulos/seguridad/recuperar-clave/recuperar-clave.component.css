@@ -27,7 +27,8 @@
  }
 
  .col {
-     margin-top: 10%;
+     margin-top: 40px;
+     margin-bottom: 38px;
  }
 
  .btn {
@@ -38,4 +39,9 @@
  .btn:hover {
      background-color: #66B9A0;
      color: white;
+ }
+
+ #login-page .row{
+    justify-content: center;
+    align-items: center;
  }

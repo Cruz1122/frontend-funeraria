@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { UsuarioModel } from '../modelos/usuario.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ConfiguracionRutasBackend } from '../config/configuracion.rutas.backend';
+import { delay } from 'rxjs';
 import { UsuarioValidadoModel } from '../modelos/usuario.validado.model';
 
 @Injectable({
@@ -52,7 +53,11 @@ export class SeguridadService {
   }
 
   ValidarHashUsuarioPublico(hash: string): Observable<boolean>{
-    return this.http.post<boolean>(`${this.urlBase}validar-hash-usuario`, {codigoHash: hash});
+    return this.http
+      .post<boolean>(`${this.urlBase}validar-hash-usuario`, {
+        codigoHash: hash,
+      })
+      .pipe(delay(3000));
   }
 
   /**
