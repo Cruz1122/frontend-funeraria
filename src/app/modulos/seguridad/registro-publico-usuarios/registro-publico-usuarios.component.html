@@ -1,54 +1,72 @@
-<div class="row">
-    <form  [formGroup]="fGroup" class="col s12">
+<div id="register-page" class="row">
+  <div class="container-register">
+    <form [formGroup]="fGroup" class="register-form">
       <div class="row">
-        <div class="input-field col s3">
+        <h3 class="titulo-registro">Registro</h3>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
           <input formControlName="primerNombre" id="primerNombre" type="text" class="validate" />
           <label for="primerNombre">Primer nombre</label>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field col s6">
           <input formControlName="segundoNombre" id="segundoNombre" type="text" class="validate" />
           <label for="segundoNombre">Segundo nombre</label>
         </div>
-        <div class="input-field col s3">
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
           <input formControlName="primerApellido" id="primerApellido" type="text" class="validate" />
           <label for="primerApellido">Primer apellido</label>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field col s6">
           <input formControlName="segundoApellido" id="segundoApellido" type="text" class="validate" />
           <label for="segundoApellido">Segundo apellido</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4">
+        <div class="input-field col s12">
           <input formControlName="correo" id="email" type="email" class="validate" />
           <label for="email">Correo</label>
         </div>
-        <div class="input-field col s2">
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
           <input formControlName="telefono" id="telefono" type="text" class="validate" />
           <label for="telefono">Teléfono</label>
         </div>
-        <div class="input-field col s3">
-            <input formControlName="lugarResidencia" id="place_residence" type="text" class="validate" />
-            <label for="place_residence">Ciudad de residencia</label>
-          </div>
-        <div class="input-field col s3">
-            <input formControlName="modoRecuperacionCuenta" id="account_recover" type="text" class="validate" />
-            <label for="account_recover">Modo de recuperación</label>
+        
+        <div class="input-field col s8">
+          <select formControlName="lugarResidencia" id="place_residence" class="browser-default">
+            <option value="" disabled selected>Selecciona tu ciudad</option>
+            <option value="Bogotá">Bogotá</option>
+            <option value="Medellín">Medellín</option>
+            <option value="Cali">Cali</option>
+            <option value="Barranquilla">Barranquilla</option>
+            <!-- Agrega más ciudades según sea necesario -->
+          </select>
         </div>
-
       </div>
+      
       <div class="row">
-        <div class="col s12">
-          <button
-            class="btn waves-effect waves-light"
-            type="button"
-            (click)="Registrarse()"
-            
-          >
+        <div class="input-field col s12">
+          <select formControlName="modoRecuperacionCuenta" id="account_recover" class="browser-default">
+            <option value="" disabled selected>Selecciona el modo de recuperación</option>
+            <option value="Correo">Correo</option>
+            <option value="Teléfono">Teléfono</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 center-align">
+          <button class="btn waves-effect waves-light" type="button" (click)="Registrarse()">
             Registrarse
-            <i class="material-icons right">send</i>
+            <i class="material-icons right">supervisor_account</i>
           </button>
         </div>
       </div>
     </form>
   </div>
+</div>

@@ -1,0 +1,48 @@
+#register-page {
+  max-width: 500px;
+  max-height: 1000px;
+  margin-bottom: 40px;
+}
+
+.titulo-registro {
+  text-align: center;
+  font-weight: bold;
+}
+
+.container-register{
+    margin-top: 11px;
+    border: 1px solid #ccc;
+    padding: 2%;
+}
+
+
+.router-text {
+    color: #66B9A0;
+}
+
+.container-register button {
+    background-color: #66B9A0;
+    font-weight: bold;
+}
+
+.container-register select {
+    color: #BABABA;
+    border-color: #c6c6c6;
+}
+
+.container-register select:focus {
+    color: #BABABA;
+    border-color: #26A69A;
+}
+
+.show-errors {
+  color: #66B9A0;
+}
+
+.row {
+    margin-bottom: 0px;
+}
+
+.button {
+    padding: 6%;
+}
