@@ -12,3 +12,30 @@
       -o-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
  }
+
+ .alerta {
+     color: #66B9A0;
+ }
+
+.row p {
+     text-align: center;
+}
+
+ .row h3 {
+     text-align: center;
+     font-weight: bold;
+ }
+
+ .col {
+     margin-top: 10%;
+ }
+
+ .btn {
+     background-color: #9BD9C6;
+     color: black;
+ }
+
+ .btn:hover {
+     background-color: #66B9A0;
+     color: white;
+ }

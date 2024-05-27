@@ -2,6 +2,8 @@
     <div class="col s12 z-depth-6 card-panel">
         <form [formGroup]="fGroup" class="login-form">
             <div class="row">
+                <h3>Recuperar Clave</h3>
+                <p>Por favor, ingrese su correo electrónico para recibir un codigo de recuperación de contraseña.</p>
             </div>
             <div class="row">
                 <div class="input-field col s12">
@@ -10,13 +12,13 @@
                     <label for="email" data-error="wrong" data-success="right">Correo</label>
                     <div class="show-errors" *ngIf="obtenerFormGroup['correo'].errors 
             && (obtenerFormGroup['correo'].dirty || obtenerFormGroup['correo'].touched)">
-                        <strong>Este campo es obligatorio y debe tener el formato de correo electrónico</strong>
+                        <strong class="alerta">Este campo es obligatorio y debe tener el formato de correo electrónico</strong>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <button (click)="RecuperarClave()" class="btn waves-effect waves-light col s12">Recuperar</button>
+                    <button (click)="RecuperarClave()" class="btn #66B9A0 waves-effect waves-light col s12">Recuperar</button>
                 </div>
             </div>
         </form>
