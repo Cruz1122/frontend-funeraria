@@ -37,3 +37,9 @@
 .show-errors {
   color: #66B9A0;
 }
+
+.input-field .prefix {
+  padding-top: 5px;
+  padding-left: 5px;
+    font-size: 1.8rem;
+}
