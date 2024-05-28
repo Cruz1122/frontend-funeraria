@@ -1,0 +1,66 @@
+<div id="payment-page" class="row">
+    <div class="container-payment">
+        <form [formGroup]="fGroup" class="payment-form">
+            <div class="row">
+                <h3 class="titulo-pago">Pago</h3>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input formControlName="numeroTarjeta" id="numeroTarjeta" type="number" class="validate" />
+                    <label for="numeroTarjeta">Número de tarjeta</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input formControlName="nombreTitular" id="nombreTitular" type="text" class="validate" />
+                    <label for="nombreTitular">Nombre del titular</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="expire-date input-field col s4">Fecha de expiración</div>
+                <div class="input-field col s4">
+                    <input formControlName="mes" id="mes" type="number" min="1" max="12" class="validate" />
+                    <label for="mes">Mes</label>
+                </div>
+                <div class="input-field col s4">
+                    <input formControlName="ano" id="ano" type="number" min="2023" max="2099" class="validate" />
+                    <label for="ano">Año</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <input formControlName="cvc" id="cvc" type="text" minlength="3" maxlength="3" class="validate" />
+                    <label for="cvc">CVC</label>
+                </div>
+
+                <div class="input-field col s8">
+                    <input formControlName="direccion" id="direccion" type="text" class="validate" />
+                    <label for="direccion">Dirección</label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="input-field col s12">
+                    <select formControlName="planes" id="plan_electo" class="browser-default">
+                        <option value="" disabled selected>Selecciona tu plan</option>
+                        <option value="Plan básico">Plan básico - $40.000,00 mensual</option>
+                        <option value="Plan estándar">Plan estándar - $60.000,00 mensual</option>
+                        <option value="Plan premium">Plan premium - $80.000,00 mensual</option>
+                        <option value="Plan familiar">Plan familiar - $100.000,00 mensual</option>
+                        <option value="Plan de repatriación internacional">Plan de repatriación internacional - $150.000,00 mensual</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light" type="button" (click)="RealizarPago()">
+                        Registrarse
+                        <i class="material-icons right">person_add</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

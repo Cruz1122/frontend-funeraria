@@ -1,0 +1,57 @@
+#payment-page {
+  max-width: 500px;
+  max-height: 1000px;
+  margin-bottom: 40px;
+}
+
+.titulo-pago {
+  text-align: center;
+  font-weight: bold;
+}
+
+.container-payment {
+  margin-top: 11px;
+  border: 1px solid #ccc;
+  padding: 2%;
+}
+
+.router-text {
+  color: #66b9a0;
+}
+
+.container-payment button {
+  background-color: #66b9a0;
+  font-weight: bold;
+}
+
+.container-payment select {
+  color: #bababa;
+  border-color: #c6c6c6;
+}
+
+.container-payment select:focus {
+  color: #bababa;
+  border-color: #26a69a;
+}
+
+.show-errors {
+  color: #66b9a0;
+}
+
+.row {
+  margin-bottom: 0px;
+}
+
+.button {
+  padding: 6%;
+}
+
+.expire-date {
+    padding-top: 15px;
+    color: #a5a5a5;
+}
+
+select .browser-default {
+    color: #bababa;
+    border-color: #c6c6c6;
+}
