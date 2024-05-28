@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { KEYS } from 'KEYS';
 import { UsuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
@@ -10,6 +11,8 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
 })
 export class RegistroPublicoUsuariosComponent {
   fGroup: FormGroup = new FormGroup({});
+  siteKey: string = KEYS.GOOGLERECAPTCHA_SECRET_KEY; 
+
 
   constructor(
     private fb: FormBuilder,
@@ -33,6 +36,7 @@ export class RegistroPublicoUsuariosComponent {
       lugarResidencia: ['', [Validators.required]],
       telefono: ['', [Validators.minLength(9)]],
       modoRecuperacionCuenta: ['', [Validators.required]],
+      recaptcha: ['', Validators.required]
     });
   }
 

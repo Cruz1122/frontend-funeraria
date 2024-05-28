@@ -14,6 +14,7 @@ import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
 import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publi
     CommonModule,
     SeguridadRoutingModule,
     ReactiveFormsModule,
+    NgxCaptchaModule,
     FormsModule,
   ],
 })
