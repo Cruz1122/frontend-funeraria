@@ -1,5 +1,7 @@
 #login-page {
     width: 500px;
+    margin-top: 12px;
+    margin-bottom: 11px;
  }
  
  .card {
@@ -37,3 +39,34 @@
      background-color: #66B9A0;
      color: white;
  }
+
+ .security i {
+    font-size: 9rem;
+ }
+
+button {
+    background-color: #66B9A0;
+    font-weight: bold;
+}
+.correo {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.correo label {
+    padding-left: 10%;
+}
+
+.button {
+    max-height: 100px;
+}
+
+.button button {
+    margin-top: 0px;
+    padding: 0%;
+}
+
+.correo-row {
+    margin: 0px;
+    padding: 0px;
+}

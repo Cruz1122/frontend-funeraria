@@ -11,6 +11,10 @@
     border-radius: 10px;
 }
 
+.logo:hover {
+    cursor: pointer;
+}
+
 .brand-logo {
     margin-left: 5px;
     color: black;

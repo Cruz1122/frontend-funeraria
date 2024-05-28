@@ -202,3 +202,7 @@ main {
 .more-plans-button:hover {
     background-color: #66B9A0;
 }
+
+.text-container {
+    text-align: justify;
+}

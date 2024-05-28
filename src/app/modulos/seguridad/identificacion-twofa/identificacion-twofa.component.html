@@ -1,23 +1,23 @@
-
 <div id="login-page" class="row">
-    <div class="col s12 z-depth-6 card-panel">
-      <form class="login-form" [formGroup]="fGroup">
-        <div class="row">
-          <h3>Codigo de Verificación</h3>
-          <p>Se ha enviado un código de 5 dígitos a su correo electrónico.</p>
-          <p>Por favor, ingréselo en el siguiente recuadro.</p>
+  <div class="col s12 z-depth-6 card-panel">
+    <form [formGroup]="fGroup" class="login-form">
+      <div class="row">
+        <h3>Código de verificación</h3>
+        <p>Ingrese su correo electrónico para recibir un código de 2FA.</p>
+      </div>
+      <div class="security row center-align"><i class="material-icons">security</i></div>
+      <div class="correo-row row">
+        <div class="correo input-field col s12">
+          <i class="material-icons prefix">lock_outline</i>
+          <input formControlName="codigo" class="validate" id="2fa" type="text">
+          <label for="2fa" data-error="wrong" data-success="right">Código</label>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input formControlName="codigo" class="validate" id="2fa" type="text">
-            <label for="2fa" data-error="wrong" data-success="right">Código</label>
-          </div>
+      </div>
+      <div class="button row">
+        <div class="input-field col s12">
+          <button (click)="ValidarCodigo2fa()" class="btn waves-effect waves-light col s12">Enviar</button>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <button (click)="ValidarCodigo2fa()" class="btn waves-effect waves-light col s12">Validar</button>
-          </div>
-        </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
+</div>
