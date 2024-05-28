@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-identificacion-usuario',
   templateUrl: './identificacion-usuario.component.html',
-  styleUrls: ['./identificacion-usuario.component.css']
+  styleUrls: ['./identificacion-usuario.component.css'],
 })
 export class IdentificacionUsuarioComponent {
   fGroup: FormGroup = new FormGroup({});
@@ -17,10 +17,7 @@ export class IdentificacionUsuarioComponent {
     private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
     private router: Router
-  ) {
-
-
-  }
+  ) {}
 
   ngOnInit() {
     this.ConstruirFormulario();
@@ -29,36 +26,40 @@ export class IdentificacionUsuarioComponent {
   ConstruirFormulario() {
     this.fGroup = this.fb.group({
       usuario: ['', [Validators.required, Validators.email]],
-      clave: ['', [Validators.required]]
+      clave: ['', [Validators.required]],
     });
   }
 
-
   IdentificarUsuario() {
     if (this.fGroup.invalid) {
-      alert('Datos invalidos')
+      alert('Datos invalidos');
     } else {
-
       let usuario = this.obtenerFormGroup['usuario'].value;
       let clave = this.obtenerFormGroup['clave'].value;
       let claveCifrada = MD5(clave).toString();
 
-      this.servicioSeguridad.IdentificarUsuario(usuario, claveCifrada).subscribe({
-        next: (datos: UsuarioModel) => {
-          if(datos._id == undefined || datos._id == null){
-            alert("Credenciales incorrectas o falta la validación del correo electrónico")
-          } else {
-            console.log(datos);
-            if (this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)) {
-              console.log('Usuario identificado');
-              this.router.navigate(['/seguridad/2fa']);
+      this.servicioSeguridad
+        .IdentificarUsuario(usuario, claveCifrada)
+        .subscribe({
+          next: (datos: UsuarioModel) => {
+            if (datos._id == undefined || datos._id == null) {
+              alert(
+                'Credenciales incorrectas o falta la validación del correo electrónico'
+              );
+            } else {
+              console.log(datos);
+              if (
+                this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)
+              ) {
+                console.log('Usuario identificado');
+                this.router.navigate(['/seguridad/2fa']);
+              }
             }
-          }
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      });
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
     }
   }
 

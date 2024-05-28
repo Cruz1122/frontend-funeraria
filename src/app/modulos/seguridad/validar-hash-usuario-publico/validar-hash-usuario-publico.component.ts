@@ -28,11 +28,8 @@ Método de validación de hash*/
     this.servicioSeguridad.ValidarHashUsuarioPublico(this.hash).subscribe({
       next: (respuesta: boolean) => {
         this.validado = respuesta;
-
       },
-      error: (err) => {
-
-      },
+      error: (err) => {},
     });
   }
 }

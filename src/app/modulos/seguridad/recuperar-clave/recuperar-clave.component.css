@@ -1,51 +1,55 @@
 #login-page {
-    width: 500px;
-    margin-top: 8.5%;
-    margin-bottom: 8.1%
- }
- 
- .card {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -moz-transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
- }
-
- .alerta {
-     color: #66B9A0;
- }
-
-.row p {
-     text-align: center;
+  width: 500px;
+  margin-top: 4.6%;
+  margin-bottom: 4.6%;
 }
 
- .row h3 {
-     text-align: center;
-     font-weight: bold;
- }
+.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
- .btn {
-     background-color: #9BD9C6;
-     color: black;
- }
+.alerta {
+  color: #66b9a0;
+}
 
- .btn:hover {
-     background-color: #66B9A0;
-     color: white;
- }
+.row p {
+  text-align: center;
+}
+
+.row h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #9bd9c6;
+  color: black;
+}
+
+.btn:hover {
+  background-color: #66b9a0;
+  color: white;
+}
 .correo {
-    padding-left: 10%;
-    padding-right: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .correo label {
-    padding-left: 10%;
+  padding-left: 10%;
 }
 
 button {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.recover-icon i {
+  font-size: 7rem;
 }

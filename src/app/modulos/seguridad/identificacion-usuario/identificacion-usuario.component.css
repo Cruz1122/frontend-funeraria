@@ -3,25 +3,25 @@
   max-height: 700px;
 }
 .titulo-inicio-sesion {
-    padding-top: 20px;
+  padding-top: 20px;
   text-align: center;
   font-weight: bold;
 }
 
-.container-login{
-    margin-top: 11px;
-    border: 1px solid #ccc;
-    padding: 5%;
-    margin-bottom: 30px;
+.container-login {
+  margin-top: 11px;
+  border: 1px solid #ccc;
+  padding: 5%;
+  margin-bottom: 30px;
 }
 
 .router-text {
-    color: #66B9A0;
+  color: #66b9a0;
 }
 
 .container-login button {
-    background-color: #66B9A0;
-    font-weight: bold;
+  background-color: #66b9a0;
+  font-weight: bold;
 }
 
 .card {
@@ -36,11 +36,11 @@
 }
 
 .show-errors {
-  color: #66B9A0;
+  color: #66b9a0;
 }
 
 .input-field .prefix {
   padding-top: 5px;
   padding-left: 5px;
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }

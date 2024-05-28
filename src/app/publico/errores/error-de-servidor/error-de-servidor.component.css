@@ -1,0 +1,16 @@
+.body{
+    min-height: 84vh;
+    max-height: 84vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-servidor {
+    color: #66B9A0;
+    font-weight: bold;
+}
+
+.error-icon{
+    font-size: 12rem;
+}

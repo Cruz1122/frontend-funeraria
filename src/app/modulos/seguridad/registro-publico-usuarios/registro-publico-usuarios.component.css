@@ -9,40 +9,39 @@
   font-weight: bold;
 }
 
-.container-register{
-    margin-top: 11px;
-    border: 1px solid #ccc;
-    padding: 2%;
+.container-register {
+  margin-top: 11px;
+  border: 1px solid #ccc;
+  padding: 2%;
 }
 
-
 .router-text {
-    color: #66B9A0;
+  color: #66b9a0;
 }
 
 .container-register button {
-    background-color: #66B9A0;
-    font-weight: bold;
+  background-color: #66b9a0;
+  font-weight: bold;
 }
 
 .container-register select {
-    color: #BABABA;
-    border-color: #c6c6c6;
+  color: #bababa;
+  border-color: #c6c6c6;
 }
 
 .container-register select:focus {
-    color: #BABABA;
-    border-color: #26A69A;
+  color: #bababa;
+  border-color: #26a69a;
 }
 
 .show-errors {
-  color: #66B9A0;
+  color: #66b9a0;
 }
 
 .row {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .button {
-    padding: 6%;
+  padding: 6%;
 }

@@ -15,7 +15,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
 import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
 
-
 @NgModule({
   declarations: [
     IdentificacionUsuarioComponent,
@@ -28,13 +27,13 @@ import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publi
     EliminarUsuarioComponent,
     CerrarSesionComponent,
     RegistroPublicoUsuariosComponent,
-    ValidarHashUsuarioPublicoComponent
+    ValidarHashUsuarioPublicoComponent,
   ],
   imports: [
     CommonModule,
     SeguridadRoutingModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+    FormsModule,
+  ],
 })
-export class SeguridadModule { }
+export class SeguridadModule {}

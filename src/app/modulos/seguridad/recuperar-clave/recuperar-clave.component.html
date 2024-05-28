@@ -3,7 +3,10 @@
         <form [formGroup]="fGroup" class="login-form">
             <div class="row">
                 <h3>Recuperar clave</h3>
-                <p>Ingrese su correo electrónico para recibir un codigo de recuperación.</p>
+                <p>Ingrese su correo electrónico para recibir un código de recuperación.</p>
+            </div>
+            <div class="recover-icon center-align">
+                <i class="material-icons prefix">restore</i>
             </div>
             <div class="row">
                 <div class="correo input-field col s12">
@@ -12,7 +15,8 @@
                     <label for="email" data-error="wrong" data-success="right">Correo</label>
                     <div class="show-errors" *ngIf="obtenerFormGroup['correo'].errors 
             && (obtenerFormGroup['correo'].dirty || obtenerFormGroup['correo'].touched)">
-                        <strong class="alerta">Este campo es obligatorio y debe tener el formato de correo electrónico</strong>
+                        <strong class="alerta">Este campo es obligatorio y debe tener el formato de correo
+                            electrónico</strong>
                     </div>
                 </div>
             </div>
