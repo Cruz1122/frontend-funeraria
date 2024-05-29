@@ -44,3 +44,9 @@
   padding-left: 5px;
   font-size: 1.8rem;
 }
+
+.recaptcha {
+  margin-left: 16%;
+  margin-right: 16%;
+  margin-bottom: 10%;
+}

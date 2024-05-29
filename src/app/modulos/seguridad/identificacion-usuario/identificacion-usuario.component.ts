@@ -4,6 +4,7 @@ import { UsuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 import { MD5 } from 'crypto-js';
 import { Router } from '@angular/router';
+import { KEYS } from 'KEYS';
 
 @Component({
   selector: 'app-identificacion-usuario',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class IdentificacionUsuarioComponent {
   fGroup: FormGroup = new FormGroup({});
+  siteKey: string = KEYS.GOOGLERECAPTCHA_SECRET_KEY; 
 
   constructor(
     private fb: FormBuilder,
@@ -27,6 +29,7 @@ export class IdentificacionUsuarioComponent {
     this.fGroup = this.fb.group({
       usuario: ['', [Validators.required, Validators.email]],
       clave: ['', [Validators.required]],
+      recaptcha: ['', Validators.required]
     });
   }
 
@@ -66,4 +69,6 @@ export class IdentificacionUsuarioComponent {
   get obtenerFormGroup() {
     return this.fGroup.controls;
   }
+
+  
 }

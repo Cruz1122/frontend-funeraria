@@ -141,6 +141,12 @@
         </div>
       </div>
 
+      <div class="recaptcha">
+        <ngx-recaptcha2 class="captcha" #captchaElem [siteKey]="siteKey" [useGlobalDomain]="false"
+          formControlName="recaptcha">
+        </ngx-recaptcha2>
+      </div>
+
       <div class="row">
         <div class="col s12 center-align">
           <button class="btn waves-effect waves-light" type="button" (click)="Registrarse()">

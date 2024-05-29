@@ -45,3 +45,9 @@
 .button {
   padding: 6%;
 }
+
+.recaptcha {
+  margin-left: 16%;
+  margin-right: 16%;
+  margin-bottom: 10%;
+}
