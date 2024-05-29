@@ -18,18 +18,29 @@ export class PagoComponent {
   }
 
   ConstruirFormulario() {
-    this.fb.group({
-      numeroTarjeta: ['', [Validators.required, this.validarTarjeta]],
+    this.fGroup = this.fb.group({
+      numeroTarjeta: ['', [Validators.required, Validators.minLength(15), Validators.maxLength(19), this.validarTarjeta]],
       nombreTitular: ['', [Validators.required]],
       mes: ['', [Validators.required]],
       ano: ['', [Validators.required]],
       cvc: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
-      plan: ['', [Validators.required]]
+      planes: ['', [Validators.required]]
     });
   }
 
-  RealizarPago() {}
+  RealizarPago() {
+    let campos = this.ObtenerFormGroup;
+    let datos = {
+      numeroTarjeta: campos['numeroTarjeta'].value,
+      nombreTitular: campos['nombreTitular'].value,
+      mes: campos['mes'].value,
+      ano: campos['ano'].value,
+      cvc: campos['cvc'].value,
+      direccion: campos['direccion'].value,
+      planes: campos['planes'].value
+    };
+  }
 
   validarTarjeta(cardNumber: string): boolean {
     let sum = 0;
@@ -48,4 +59,8 @@ export class PagoComponent {
 
     return sum % 10 == 0;
   }
+  get ObtenerFormGroup() {
+    return this.fGroup.controls;
+  }
 }
+

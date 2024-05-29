@@ -6,11 +6,11 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input formControlName="numeroTarjeta" id="numeroTarjeta" type="number" class="validate" />
+                    <input formControlName="numeroTarjeta" id="numeroTarjeta" type="text" class="validate" pattern="\d*"
+                        minlength="15" maxlength="19"/>
                     <label for="numeroTarjeta">Número de tarjeta</label>
                 </div>
             </div>
-
             <div class="row">
                 <div class="input-field col s12">
                     <input formControlName="nombreTitular" id="nombreTitular" type="text" class="validate" />
@@ -39,7 +39,7 @@
                     <label for="direccion">Dirección</label>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="input-field col s12">
                     <select formControlName="planes" id="plan_electo" class="browser-default">
@@ -48,16 +48,17 @@
                         <option value="Plan estándar">Plan estándar - $60.000,00 mensual</option>
                         <option value="Plan premium">Plan premium - $80.000,00 mensual</option>
                         <option value="Plan familiar">Plan familiar - $100.000,00 mensual</option>
-                        <option value="Plan de repatriación internacional">Plan de repatriación internacional - $150.000,00 mensual</option>
+                        <option value="Plan de repatriación internacional">Plan de repatriación internacional -
+                            $150.000,00 mensual</option>
                     </select>
                 </div>
             </div>
-        
+
             <div class="row">
                 <div class="col s12 center-align">
                     <button class="btn waves-effect waves-light" type="button" (click)="RealizarPago()">
-                        Registrarse
-                        <i class="material-icons right">person_add</i>
+                        Pagar y completar registro
+                        <i class="material-icons right">payment</i>
                     </button>
                 </div>
             </div>
