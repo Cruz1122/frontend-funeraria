@@ -29,12 +29,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s4">
+                <div class="input-field col s2">
                     <input formControlName="cvc" id="cvc" type="text" minlength="3" maxlength="3" class="validate" />
                     <label for="cvc">CVC</label>
                 </div>
 
-                <div class="input-field col s8">
+                <div class="input-field col s3">
+                    <input formControlName="documento" id="documento" type="text" maxlength="10" class="validate" pattern="\d*" />
+                    <label for="documento">Documento</label>
+                </div>
+
+                <div class="input-field col s7">
                     <input formControlName="direccion" id="direccion" type="text" class="validate" />
                     <label for="direccion">Dirección</label>
                 </div>
@@ -42,13 +47,13 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    <select formControlName="planes" id="plan_electo" class="browser-default">
+                    <select formControlName="plan" id="plan_electo" class="browser-default">
                         <option value="" disabled selected>Selecciona tu plan</option>
-                        <option value="Plan básico">Plan básico - $40.000,00 mensual</option>
-                        <option value="Plan estándar">Plan estándar - $60.000,00 mensual</option>
-                        <option value="Plan premium">Plan premium - $80.000,00 mensual</option>
-                        <option value="Plan familiar">Plan familiar - $100.000,00 mensual</option>
-                        <option value="Plan de repatriación internacional">Plan de repatriación internacional -
+                        <option value="1">Plan básico - $40.000,00 mensual</option>
+                        <option value="2">Plan estándar - $60.000,00 mensual</option>
+                        <option value="3">Plan premium - $80.000,00 mensual</option>
+                        <option value="4">Plan familiar - $100.000,00 mensual</option>
+                        <option value="5">Plan de repatriación internacional -
                             $150.000,00 mensual</option>
                     </select>
                 </div>

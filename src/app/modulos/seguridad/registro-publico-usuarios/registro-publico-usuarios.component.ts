@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { KEYS } from 'KEYS';
 import { UsuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
+import { Router } from '@angular/router';
+import { SharedService } from 'src/app/servicios/shared.service';
 
 @Component({
   selector: 'app-registro-publico-usuarios',
@@ -16,7 +18,9 @@ export class RegistroPublicoUsuariosComponent {
 
   constructor(
     private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
+    private router: Router,
+    private sharedService: SharedService
   ) {}
 
   ngOnInit() {
@@ -59,9 +63,8 @@ export class RegistroPublicoUsuariosComponent {
     this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({
       next: (respuesta: UsuarioModel) => {
         console.log(datos);
-        alert(
-          'Registro correcto, se ha enviado un mensaje para validar su direccion de correo electronico'
-        );
+        this.sharedService.changeData(datos);
+        this.router.navigate(['/logica-de-negocio/pago']);
       },
       error: (err) => {
         alert('Se ha producido un error en el registro.');
