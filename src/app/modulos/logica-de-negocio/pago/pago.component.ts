@@ -6,6 +6,8 @@ import { LogicaService } from 'src/app/servicios/logica.service';
 import { SharedService } from 'src/app/servicios/shared.service';
 import { HttpClient } from '@angular/common/http';
 import { ConfiguracionRutasBackend } from 'src/app/config/configuracion.rutas.backend';
+import { FacturacionModel } from 'src/app/modelos/facturacion.model';
+import { PagoModel } from 'src/app/modelos/pago.model';
 
 @Component({
   selector: 'app-pago',
@@ -75,6 +77,52 @@ export class PagoComponent {
     });
 
     this.CrearClientePlan(datos_pago);
+    this.CrearFacturacion();
+    
+    let datos_pago_model = {
+      metodoPago: 'Tarjeta de crédito',
+      fechaPago: new Date(),
+      idFacturacion: 0
+    }
+
+    this.http.get(`${ConfiguracionRutasBackend.urlLogica}/facturacion/count`).subscribe((response: any) => {
+      datos_pago_model.idFacturacion = response.count;
+      console.log(datos_pago_model);
+      
+      this.servicioLogica.RegistrarPago(datos_pago_model).subscribe({
+        next: (respuesta: PagoModel) => {
+          alert('Pago realizado correctamente');
+        },
+        error: (err) => {
+          alert('Se ha producido un error en el pago.');
+        }
+      });
+    });
+
+  }
+
+  CrearFacturacion() {
+    let datos = {
+      fechaFacturacion: new Date(),
+      estadoPago: true,
+      idClientePlan: 0,
+    };
+
+    this.http
+    .get(`${ConfiguracionRutasBackend.urlLogica}/cliente-plan/count`)
+    .subscribe((response: any) => {
+      datos.idClientePlan = response.count;
+      console.log(datos);
+      
+      this.servicioLogica.RegistrarFacturacion(datos).subscribe({
+        next: (respuesta: FacturacionModel) => {
+          console.log(datos);
+        },
+        error: (err) => {
+          console.log('Se ha producido un error en la facturación.');
+        }
+      });
+    });
   }
 
   CrearCliente(datos: any) {

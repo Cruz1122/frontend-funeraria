@@ -5,17 +5,19 @@
                 <h3 class="titulo-pago">Pago</h3>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s11">
                     <input formControlName="numeroTarjeta" id="numeroTarjeta" type="text" class="validate" pattern="\d*"
                         minlength="15" maxlength="19"/>
                     <label for="numeroTarjeta">Número de tarjeta</label>
                 </div>
+                <i class="field-icon material-icons">payment</i>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s11">
                     <input formControlName="nombreTitular" id="nombreTitular" type="text" class="validate" />
                     <label for="nombreTitular">Nombre del titular</label>
                 </div>
+                <i class="field-icon material-icons">person</i>
             </div>
             <div class="row">
                 <div class="expire-date input-field col s4">Fecha de expiración</div>
@@ -63,7 +65,7 @@
                 <div class="col s12 center-align">
                     <button class="btn waves-effect waves-light" [disabled]="!fGroup.valid" type="button" (click)="RealizarPago()">
                         Pagar y completar registro
-                        <i class="material-icons right">payment</i>
+                        <i class="pay material-icons right">person_add</i>
                     </button>
                 </div>
             </div>
