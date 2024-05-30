@@ -22,7 +22,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <button (click)="RecuperarClave()" class="btn waves-effect waves-light col s12">Recuperar</button>
+                    <button (click)="RecuperarClave()" [disabled]="!fGroup.valid" class="btn waves-effect waves-light col s12">Recuperar</button>
                 </div>
             </div>
         </form>

@@ -57,6 +57,11 @@ export class PqrsComponent {
       mensaje: campos['mensaje'].value,
     };
 
+    if (this.fGroup.invalid) {
+      alert('Por favor, complete todos los campos');
+      return;
+    }
+    
     this.servicioLogica.EnviarPQRS(datos).subscribe({
       next: (respuesta: PqrsModel) => {
         alert('PQRS enviada correctamente');

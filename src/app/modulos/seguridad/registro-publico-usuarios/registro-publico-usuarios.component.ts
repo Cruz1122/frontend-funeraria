@@ -60,6 +60,12 @@ export class RegistroPublicoUsuariosComponent {
       fechaCreacion: new Date(),
       modoRecuperacionCuenta: campos['modoRecuperacionCuenta'].value,
     };
+
+    if (this.fGroup.invalid) {
+      alert('Por favor, complete todos los campos');
+      return;
+    }
+
     this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({
       next: (respuesta: UsuarioModel) => {
         console.log(datos);

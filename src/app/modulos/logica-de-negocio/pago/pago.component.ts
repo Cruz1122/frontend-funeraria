@@ -59,6 +59,11 @@ export class PagoComponent {
       direccion: campos['direccion'].value,
       plan: campos['plan'].value,
     };
+    
+    if (this.fGroup.invalid) {
+      alert('Por favor, complete todos los campos')
+      return;
+    }
 
     this.sharedService.currentData.subscribe((datos) => {
       if (datos) {

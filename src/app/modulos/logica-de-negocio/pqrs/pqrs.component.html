@@ -60,6 +60,7 @@
       <div class="col s12">
         <button
           class="btn waves-effect waves-light"
+          [disabled]="!fGroup.valid" 
           type="button"
            (click)="EnviarPQRS()" 
         >

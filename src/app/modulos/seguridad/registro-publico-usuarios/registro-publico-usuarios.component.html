@@ -149,7 +149,7 @@
 
       <div class="row">
         <div class="col s12 center-align">
-          <button class="btn waves-effect waves-light" type="button" (click)="Registrarse()">
+          <button class="btn waves-effect waves-light" [disabled]="!fGroup.valid" type="button" (click)="Registrarse()">
             Registrarse
             <i class="material-icons right">person_add</i>
           </button>

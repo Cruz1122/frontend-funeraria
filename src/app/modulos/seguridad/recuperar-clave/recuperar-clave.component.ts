@@ -24,7 +24,7 @@ export class RecuperarClaveComponent {
 
   RecuperarClave() {
     if (this.fGroup.invalid) {
-      alert('Debe ingresar un correo valido');
+      alert('Debe ingresar un correo válido');
     } else {
       let correo = this.obtenerFormGroup['correo'].value;
       this.servicioSeguridad.RecuperarClavePorUsuario(correo).subscribe({
