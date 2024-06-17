@@ -16,11 +16,11 @@
 }
 
 .router-text {
-  color: #66b9a0;
+  color: #409E81;
 }
 
 .container-register button {
-  background-color: #66b9a0;
+  background-color: #409E81;
   font-weight: bold;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .show-errors {
-  color: #66b9a0;
+  color: #409E81;
 }
 
 .row {

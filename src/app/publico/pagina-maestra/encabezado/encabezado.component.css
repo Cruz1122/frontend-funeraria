@@ -1,6 +1,8 @@
 .navbar {
-  background-color: #66b9a0;
+  background-color: #171717;
+  color: white;
   position: fixed;
+  z-index: 1000;
 }
 .logo {
   max-width: 90%;
@@ -17,14 +19,18 @@
 
 .brand-logo {
   margin-left: 5px;
-  color: black;
+  color: whitesmoke;
   font-weight: bold;
   font-size: 20px;
 }
 #nav-mobile li a {
-  color: black; /* Cambia este valor al color deseado */
+  color: whitesmoke; /* Cambia este valor al color deseado */
   font-weight: bold;
   transition: color 0.3s;
+}
+
+#nav-mobile li a:hover {
+  background-color: #292a29;
 }
 
 #nav-mobile {

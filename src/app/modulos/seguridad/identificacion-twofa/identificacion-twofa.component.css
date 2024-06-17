@@ -31,13 +31,13 @@
 }
 
 .btn {
-  background-color: #9bd9c6;
-  color: black;
+  background-color: #409E81;
+  color: whitesmoke;
 }
 
 .btn:hover {
-  background-color: #66b9a0;
-  color: white;
+  background-color: #66B9A0;
+  color: whitesmoke;
 }
 
 .security i {
@@ -45,7 +45,7 @@
 }
 
 button {
-  background-color: #66b9a0;
+  background-color: #409E81;
   font-weight: bold;
 }
 .correo {

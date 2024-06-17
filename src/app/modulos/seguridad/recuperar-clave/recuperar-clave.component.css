@@ -16,7 +16,7 @@
 }
 
 .alerta {
-  color: #66b9a0;
+  color: #409E81;
 }
 
 .row p {
@@ -34,7 +34,7 @@
 }
 
 .btn:hover {
-  background-color: #66b9a0;
+  background-color: #409E81;
   color: white;
 }
 .correo {
