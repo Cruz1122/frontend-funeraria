@@ -1,0 +1,40 @@
+<body>
+    <main>
+        <section class="plans-section">
+            <h1>PLANES</h1>
+            <p class="descripcion">En FunerariaDigital, comprendemos que cada familia tiene necesidades únicas durante tiempos difíciles.
+                Por eso, ofrecemos una variedad de planes funerarios personalizados para adaptarnos a tus requerimientos
+                y presupuesto. Desde servicios básicos hasta opciones más completas, nuestros planes están diseñados
+                para brindarte tranquilidad y comodidad en momentos de duelo.</p>
+
+            <div class="row">
+                <div *ngFor="let r of listaPlanes" class="col s4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="{{r.foto}}">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">{{r.nombre}}</span>
+                            <p class="plan-precio">$ {{r.precio | number:'1.0-0'}}</p>
+                            <button *ngIf="!sesionActiva" routerLink="/seguridad/identificar-usuario" class="btn waves-effect waves-light" type="button">
+                                Contratar Plan
+                            </button>
+                            <button *ngIf="sesionActiva" routerLink="/inicio" class="btn waves-effect waves-light" type="button">
+                                Cambiar Plan
+                            </button>
+                        </div>
+
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">{{r.nombre}}</span>
+                            <p>{{r.detalles}}</p>
+                            <p>Este plan cuenta con una cantidad máxima de <strong>{{r.cantidadBeneficiarios}}
+                                    beneficiarios</strong>.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+</body>

@@ -19,4 +19,8 @@ export class ParametrosService {
   listarPlanes(): Observable<PlanModel[]> {
     return this.http.get<PlanModel[]>(`${this.urlBase}plan?filter={"limit":${ConfiguracionPaginacion.planesPorPagina}}`);
   }
+
+  listarPlanesTodos(): Observable<PlanModel[]> {
+    return this.http.get<PlanModel[]>(`${this.urlBase}plan`);
+  }
 }

@@ -11,6 +11,7 @@ import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/er
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { PaginaPlanesComponent } from './publico/pagina-planes/pagina-planes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     MenuLateralComponent,
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
-    InicioComponent
+    InicioComponent,
+    PaginaPlanesComponent
   ],
   imports: [
     BrowserModule,

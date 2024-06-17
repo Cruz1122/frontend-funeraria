@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IdentificacionUsuarioComponent } from './modulos/seguridad/identificacion-usuario/identificacion-usuario.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
+import { PaginaPlanesComponent } from './publico/pagina-planes/pagina-planes.component';
 
 const routes: Routes = [
   {
     path: 'inicio',
     component: InicioComponent
+  },
+  {
+    path: 'pagina-planes',
+    component: PaginaPlanesComponent,
   },
   {
     path: '',
