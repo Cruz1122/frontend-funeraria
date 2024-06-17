@@ -29,13 +29,13 @@
 }
 
 .btn {
-  background-color: #9bd9c6;
+  background-color: #409E81;
   color: black;
 }
 
 .btn:hover {
-  background-color: #409E81;
-  color: white;
+  background-color: #9bd9c6;
+  color: black;
 }
 .correo {
   padding-left: 10%;
@@ -52,4 +52,24 @@ button {
 
 .recover-icon i {
   font-size: 7rem;
+}
+
+
+.dot {
+  animation: dotFlashing 1s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotFlashing {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }

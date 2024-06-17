@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recuperar-clave',
@@ -13,7 +14,8 @@ export class RecuperarClaveComponent {
 
   constructor(
     private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -22,9 +24,12 @@ export class RecuperarClaveComponent {
     });
   }
 
+  isLoading = false;
   RecuperarClave() {
+    this.isLoading = true;
     if (this.fGroup.invalid) {
       alert('Debe ingresar un correo válido');
+      this.isLoading = false;
     } else {
       let correo = this.obtenerFormGroup['correo'].value;
       this.servicioSeguridad.RecuperarClavePorUsuario(correo).subscribe({
@@ -35,9 +40,11 @@ export class RecuperarClaveComponent {
               ' y al correo ' +
               datos.correo
           );
+          this.router.navigate(['/seguridad/identificar-usuario']);
         },
         error: (err) => {
           alert('Ha ocurrido un error enviando la nueva contraseña');
+          this.isLoading = false;
         },
       });
     }

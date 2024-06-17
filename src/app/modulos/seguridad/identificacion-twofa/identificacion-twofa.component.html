@@ -15,7 +15,13 @@
       </div>
       <div class="button row">
         <div class="input-field col s12">
-          <button (click)="ValidarCodigo2fa()" class="btn waves-effect waves-light col s12">Enviar</button>
+          <button (click)="ValidarCodigo2fa()" class="btn waves-effect waves-light col s12"
+            [disabled]="!fGroup.valid || isLoading">
+            <span *ngIf="!isLoading">Enviar</span>
+            <span *ngIf="isLoading">
+              Cargando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+            </span>
+          </button>
         </div>
       </div>
     </form>

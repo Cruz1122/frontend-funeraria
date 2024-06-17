@@ -34,8 +34,11 @@ export class IdentificacionTwofaComponent {
     });
   }
 
+  isLoading = false;
   ValidarCodigo2fa() {
+    this.isLoading = true;
     if (this.fGroup.invalid) {
+      this.isLoading = false;
       alert('Debe ingresar el código');
     } else {
       let codigo2fa = this.obtenerFormGroup['codigo'].value;
@@ -43,15 +46,16 @@ export class IdentificacionTwofaComponent {
         .ValidarCodigo2FA(this.idUsuario, codigo2fa)
         .subscribe({
           next: (datos: UsuarioValidadoModel) => {
-            console.log(datos);
             if (datos.user) {
               this.servicioSeguridad.AlmacenarDatosUsuarioValidado(datos);
               this.router.navigate(['']);
             } else {
               alert('Código incorrecto');
             }
+            this.isLoading = false;
           },
           error: (err) => {
+            this.isLoading = false;
             console.log(err);
           },
         });

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteModel } from 'src/app/modelos/cliente.model';
 import { ClientePlanModel } from 'src/app/modelos/cliente.plan.model';
+import { Router } from '@angular/router';
 import { LogicaService } from 'src/app/servicios/logica.service';
 import { SharedService } from 'src/app/servicios/shared.service';
 import { HttpClient } from '@angular/common/http';
@@ -21,7 +22,8 @@ export class PagoComponent {
     private fb: FormBuilder,
     private servicioLogica: LogicaService,
     private sharedService: SharedService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -49,7 +51,9 @@ export class PagoComponent {
     });
   }
 
+  isLoading = false;
   RealizarPago() {
+    this.isLoading = true;
     let campos = this.ObtenerFormGroup;
     let datos_pago = {
       numeroTarjeta: campos['numeroTarjeta'].value,
@@ -61,9 +65,10 @@ export class PagoComponent {
       direccion: campos['direccion'].value,
       plan: campos['plan'].value,
     };
-    
+
     if (this.fGroup.invalid) {
-      alert('Por favor, complete todos los campos')
+      this.isLoading = false;
+      alert('Por favor, complete todos los campos');
       return;
     }
 
@@ -78,27 +83,31 @@ export class PagoComponent {
 
     this.CrearClientePlan(datos_pago);
     this.CrearFacturacion();
-    
+
     let datos_pago_model = {
       metodoPago: 'Tarjeta de crédito',
       fechaPago: new Date(),
-      idFacturacion: 0
-    }
+      idFacturacion: 0,
+    };
 
-    this.http.get(`${ConfiguracionRutasBackend.urlLogica}/facturacion/count`).subscribe((response: any) => {
-      datos_pago_model.idFacturacion = response.count;
-      console.log(datos_pago_model);
-      
-      this.servicioLogica.RegistrarPago(datos_pago_model).subscribe({
-        next: (respuesta: PagoModel) => {
-          alert('Pago realizado correctamente');
-        },
-        error: (err) => {
-          alert('Se ha producido un error en el pago.');
-        }
+    this.http
+      .get(`${ConfiguracionRutasBackend.urlLogica}/facturacion/count`)
+      .subscribe((response: any) => {
+        datos_pago_model.idFacturacion = response.count;
+        console.log(datos_pago_model);
+
+        this.servicioLogica.RegistrarPago(datos_pago_model).subscribe({
+          next: (respuesta: PagoModel) => {
+            alert('Pago realizado correctamente');
+            this.isLoading = false;
+            this.router.navigate(['/seguridad/identificar-usuario']);
+          },
+          error: (err) => {
+            alert('Se ha producido un error en el pago.');
+            this.isLoading = false;
+          },
+        });
       });
-    });
-
   }
 
   CrearFacturacion() {
@@ -109,20 +118,20 @@ export class PagoComponent {
     };
 
     this.http
-    .get(`${ConfiguracionRutasBackend.urlLogica}/cliente-plan/count`)
-    .subscribe((response: any) => {
-      datos.idClientePlan = response.count;
-      console.log(datos);
-      
-      this.servicioLogica.RegistrarFacturacion(datos).subscribe({
-        next: (respuesta: FacturacionModel) => {
-          console.log(datos);
-        },
-        error: (err) => {
-          console.log('Se ha producido un error en la facturación.');
-        }
+      .get(`${ConfiguracionRutasBackend.urlLogica}/cliente-plan/count`)
+      .subscribe((response: any) => {
+        datos.idClientePlan = response.count;
+        console.log(datos);
+
+        this.servicioLogica.RegistrarFacturacion(datos).subscribe({
+          next: (respuesta: FacturacionModel) => {
+            console.log(datos);
+          },
+          error: (err) => {
+            console.log('Se ha producido un error en la facturación.');
+          },
+        });
       });
-    });
   }
 
   CrearCliente(datos: any) {
@@ -171,7 +180,7 @@ export class PagoComponent {
           },
           error: (err) => {
             alert('Se ha producido un error en el pago.');
-          }
+          },
         });
       });
   }

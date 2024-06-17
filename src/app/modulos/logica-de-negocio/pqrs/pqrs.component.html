@@ -1,6 +1,9 @@
 <div class="formulario">
   <h3>Contáctanos</h3>
-  <p>Queremos escucharte. En esta sección, te brindamos la oportunidad de compartir tus preguntas, quejas, sugerencias y reclamos. Tu retroalimentación es fundamental para nosotros, ya que nos ayuda a mejorar nuestros servicios y productos. Completa el formulario a continuación y nuestro equipo se pondrá en contacto contigo lo antes posible para atender tus inquietudes.</p>
+  <p>Queremos escucharte. En esta sección, te brindamos la oportunidad de compartir tus preguntas, quejas, sugerencias y
+    reclamos. Tu retroalimentación es fundamental para nosotros, ya que nos ayuda a mejorar nuestros servicios y
+    productos. Completa el formulario a continuación y nuestro equipo se pondrá en contacto contigo lo antes posible
+    para atender tus inquietudes.</p>
   <form [formGroup]="fGroup" class="col s12">
     <div class="row">
       <div class="input-field col s6">
@@ -48,25 +51,25 @@
         <label for="asunto" class="active">Asunto</label>
       </div>
     </div>
-      
-    <div class="row"> 
-      <div class="input-field col s12"> 
+
+    <div class="row">
+      <div class="input-field col s12">
         <textarea formControlName="mensaje" id="mensaje" class="materialize-textarea"></textarea>
         <label for="mensaje">Mensaje</label>
       </div>
     </div>
-    
+
     <div class="Enviar">
       <div class="col s12">
-        <button
-          class="btn waves-effect waves-light"
-          [disabled]="!fGroup.valid" 
-          type="button"
-           (click)="EnviarPQRS()" 
-        >
-          Enviar
-          <i class="material-icons right">send</i>
-        </button> 
+        <button class="btn waves-effect waves-light" [disabled]="!fGroup.valid || isLoading" type="button"
+          (click)="EnviarPQRS()">
+          <span *ngIf="!isLoading">Enviar
+            <i class="material-icons right">send</i>
+          </span>
+          <span *ngIf="isLoading">
+            Cargando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+          </span>
+        </button>
       </div>
     </div>
   </form>

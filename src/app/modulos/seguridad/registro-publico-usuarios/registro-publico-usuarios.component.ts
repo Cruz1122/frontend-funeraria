@@ -13,8 +13,7 @@ import { SharedService } from 'src/app/servicios/shared.service';
 })
 export class RegistroPublicoUsuariosComponent {
   fGroup: FormGroup = new FormGroup({});
-  siteKey: string = KEYS.GOOGLERECAPTCHA_SECRET_KEY; 
-
+  siteKey: string = KEYS.GOOGLERECAPTCHA_SECRET_KEY;
 
   constructor(
     private fb: FormBuilder,
@@ -40,14 +39,16 @@ export class RegistroPublicoUsuariosComponent {
       lugarResidencia: ['', [Validators.required]],
       telefono: ['', [Validators.minLength(9)]],
       modoRecuperacionCuenta: ['', [Validators.required]],
-      recaptcha: ['', Validators.required]
+      recaptcha: ['', Validators.required],
     });
   }
 
+  isLoading = false;
   /**
    * Funcion de registro publico
    */
   Registrarse() {
+    this.isLoading = true;
     let campos = this.ObtenerFormGroup;
     let datos = {
       primerNombre: campos['primerNombre'].value,
@@ -62,11 +63,11 @@ export class RegistroPublicoUsuariosComponent {
     };
     this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({
       next: (respuesta: UsuarioModel) => {
-        console.log(datos);
         this.sharedService.changeData(datos);
         this.router.navigate(['/logica-de-negocio/pago']);
       },
       error: (err) => {
+        this.isLoading = false;
         alert('Se ha producido un error en el registro.');
       },
     });

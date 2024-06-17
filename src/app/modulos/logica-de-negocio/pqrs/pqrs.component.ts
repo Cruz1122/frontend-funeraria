@@ -44,7 +44,9 @@ export class PqrsComponent {
     });
   }
 
+  isLoading = false;
   EnviarPQRS() {
+    this.isLoading = true;
     let campos = this.ObtenerFormGroup;
     let datos = {
       tipoUsuario: campos['tipoUsuario'].value,
@@ -52,7 +54,7 @@ export class PqrsComponent {
       nombres: campos['nombres'].value,
       apellidos: campos['apellidos'].value,
       email: campos['email'].value,
-      telefono: campos['telefono'].value,
+      telefono: campos['telefono'].value || '',
       asunto: campos['asunto'].value,
       mensaje: campos['mensaje'].value,
     };
@@ -66,10 +68,12 @@ export class PqrsComponent {
       next: (respuesta: PqrsModel) => {
         alert('PQRS enviada correctamente');
         this.fGroup.reset();
+        this.isLoading = false;
       },
       error: (err) => {
         alert('Se ha producido un error en el envío de la PQRS');
-      },
+        this.isLoading = false;
+      }
     });
   }
 

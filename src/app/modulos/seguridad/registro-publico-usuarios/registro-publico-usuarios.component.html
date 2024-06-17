@@ -149,9 +149,14 @@
 
       <div class="row">
         <div class="col s12 center-align">
-          <button class="btn waves-effect waves-light" [disabled]="!fGroup.valid" type="button" (click)="Registrarse()">
+          <button class="btn waves-effect waves-light" [disabled]="!fGroup.valid || isLoading" type="button" (click)="Registrarse()">
+            <span *ngIf="!isLoading">
             Siguiente
             <i class="material-icons right">forward</i>
+            </span>
+            <span *ngIf="isLoading">
+              Cargando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+            </span>
           </button>
         </div>
       </div>

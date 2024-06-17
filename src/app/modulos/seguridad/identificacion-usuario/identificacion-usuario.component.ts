@@ -33,7 +33,9 @@ export class IdentificacionUsuarioComponent {
     });
   }
 
+  isLoading = false;
   IdentificarUsuario() {
+    this.isLoading = true;
     if (this.fGroup.invalid) {
       alert('Datos invalidos');
     } else {
@@ -46,11 +48,11 @@ export class IdentificacionUsuarioComponent {
         .subscribe({
           next: (datos: UsuarioModel) => {
             if (datos._id == undefined || datos._id == null) {
+              this.isLoading = false;
               alert(
                 'Credenciales incorrectas o falta la validación del correo electrónico'
               );
             } else {
-              console.log(datos);
               if (
                 this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)
               ) {
@@ -60,6 +62,7 @@ export class IdentificacionUsuarioComponent {
             }
           },
           error: (err) => {
+            this.isLoading = false;
             console.log(err);
           },
         });
