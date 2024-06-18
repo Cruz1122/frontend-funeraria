@@ -9,11 +9,12 @@ import { MenuLateralComponent } from './publico/pagina-maestra/menu-lateral/menu
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { PaginaPlanesComponent } from './publico/pagina-planes/pagina-planes.component';
 import { PerfilComponent } from './publico/perfil/perfil.component';
 import { PerfilAdministradorComponent } from './publico/perfil-administrador/perfil-administrador.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { PerfilAdministradorComponent } from './publico/perfil-administrador/per
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide : HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
