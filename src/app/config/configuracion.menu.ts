@@ -23,6 +23,12 @@ export namespace ConfiguracionMenuLateral {
             ruta: "/parametros/plan-listar",
             icono:"<i class='material-icons'>cloud</i>",
             texto:"Planes"
+        },
+        {
+            id: "6670e31f3c3ccff65e03781f",
+            ruta: "/parametros/cliente-listar",
+            icono:"<i class='material-icons'>cloud</i>",
+            texto:"Clientes"
         }
     ];
 }

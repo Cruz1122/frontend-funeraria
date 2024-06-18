@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PlanModel } from 'src/app/modelos/plan.model';
-import { ParametrosService } from 'src/app/servicios/parametros.service';
+import { ParametrosService } from 'src/app/servicios/parametros/plan.service';
 
 @Component({
   selector: 'app-inicio',
@@ -11,13 +11,13 @@ export class InicioComponent {
   listaPlanes: PlanModel[] = [];
 
   constructor(
-    private servicioParametrizacion: ParametrosService,
+    private servicio: ParametrosService,
   ) {
 
   }
 
   ngOnInit(){
-    this.servicioParametrizacion.listarPlanes().subscribe({
+    this.servicio.listarPlanes().subscribe({
       next: (datos) => {
         this.listaPlanes = datos;
       },

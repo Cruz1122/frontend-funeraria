@@ -1,1 +1,29 @@
-<p>listar-plan works!</p>
+<br />
+<a routerLink="/parametros/producto-agregar" class="btn">Agregar Plan</a>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Cantidad de Beneficiarios</th>
+            <th>Precio</th>
+            <th>Foto</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listarPlanes">
+            <td>{{r.nombre}} </td>
+            <td>{{r.detalles}}</td>
+            <td>{{r.cantidadBeneficiarios}}</td>
+            <td>{{r.precio}}</td>
+            <td><img src="{{r.foto}}" class="imagenListadoRegistros" /></td>
+            <td>
+                <a routerLink="/parametros/producto-editar/{{r.id}}" class="btn orange">Editar Plan</a>&nbsp;
+                <a routerLink="/parametros/producto-eliminar/{{r.id}}" class="btn red">Eliminar Plan</a>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>

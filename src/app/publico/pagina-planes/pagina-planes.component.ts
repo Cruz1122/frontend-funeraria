@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PlanModel } from 'src/app/modelos/plan.model';
 import { UsuarioValidadoModel } from 'src/app/modelos/usuario.validado.model';
-import { ParametrosService } from 'src/app/servicios/parametros.service';
+import { ParametrosService } from 'src/app/servicios/parametros/plan.service';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 @Component({

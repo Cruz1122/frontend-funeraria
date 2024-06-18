@@ -162,8 +162,9 @@ export class SeguridadService {
     let menu: ItemMenuModel[] = [];
 
     permisos.forEach((permiso) => {
-
+      console.log(permiso.idPermisos);
       let datosRuta = ConfiguracionMenuLateral.listaMenus.filter(x => x.id == permiso.idPermisos);
+      
       if (datosRuta.length > 0) {
         let item = new ItemMenuModel();
         item.idMenu = permiso.idPermisos;
