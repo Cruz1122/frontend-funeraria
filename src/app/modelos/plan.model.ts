@@ -1,5 +1,5 @@
 export class PlanModel{
-    id?: string;
+    id?: number;
     nombre?: string;
     detalles?: string;
     cantidadBeneficiarios?: number;
