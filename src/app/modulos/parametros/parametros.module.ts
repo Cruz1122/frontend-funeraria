@@ -10,6 +10,7 @@ import { CrearPlanComponent } from './plan/crear-plan/crear-plan.component';
 import { EditarPlanComponent } from './plan/editar-plan/editar-plan.component';
 import { EliminarPlanComponent } from './plan/eliminar-plan/eliminar-plan.component';
 import { ListarPlanComponent } from './plan/listar-plan/listar-plan.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ListarPlanComponent } from './plan/listar-plan/listar-plan.component';
   ],
   imports: [
     CommonModule,
-    ParametrosRoutingModule
+    ParametrosRoutingModule,
+    NgxPaginationModule
   ]
 })
 export class ParametrosModule { }

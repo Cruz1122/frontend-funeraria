@@ -14,7 +14,7 @@ export class ClienteService {
   constructor(private http: HttpClient) {}
 
   listarPlanes(pag:number): Observable<PaginadorClienteModel> {
-    let limit = ConfiguracionPaginacion.planesPorPagina;
+    let limit = ConfiguracionPaginacion.registroPorPagina;
     let skip = (pag - 1) * limit;
     return this.http.get<PaginadorClienteModel>(`${this.urlBase}cliente?filter={"limit":${limit}, "skip":${skip}}`);
   }

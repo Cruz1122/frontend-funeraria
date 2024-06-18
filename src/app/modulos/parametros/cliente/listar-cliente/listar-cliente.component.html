@@ -1,5 +1,5 @@
 <br />
-<a routerLink="/parametros/producto-agregar" class="btn">Agregar Plan</a>
+<a routerLink="/parametros/cliente-agregar" class="btn">Agregar Registro</a>
 <br>
 <table>
     <thead>
@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let r of listarClientes.registros">
+        <tr *ngFor="let r of listarClientes | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
             <td>{{r.nombre}} </td>
             <td>{{r.apellidos}}</td>
             <td>{{r.documento}}</td>
@@ -24,6 +24,17 @@
                 <a routerLink="/parametros/cliente-eliminar/{{r.id}}" class="btn red">Eliminar Plan</a>
             </td>
         </tr>
-        
+        <tr>
+            <td colspan="5">
+                <pagination-controls 
+                      (pageChange)="pag = $event; ListarRegistros()"
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente"
+                      screenReaderPaginationLabel="Navegación"
+                      screenReaderPageLabel="Página"
+                      screenReaderCurrentLabel="Página actual">
+                </pagination-controls>
+            </td>
+        </tr>
     </tbody>
 </table>
