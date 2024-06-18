@@ -12,6 +12,8 @@ import { InicioComponent } from './publico/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { PaginaPlanesComponent } from './publico/pagina-planes/pagina-planes.component';
+import { PerfilComponent } from './publico/perfil/perfil.component';
+import { PerfilAdministradorComponent } from './publico/perfil-administrador/perfil-administrador.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PaginaPlanesComponent } from './publico/pagina-planes/pagina-planes.com
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
     InicioComponent,
-    PaginaPlanesComponent
+    PaginaPlanesComponent,
+    PerfilComponent,
+    PerfilAdministradorComponent
   ],
   imports: [
     BrowserModule,

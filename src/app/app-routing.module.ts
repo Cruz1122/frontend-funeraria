@@ -4,6 +4,7 @@ import { InicioComponent } from './publico/inicio/inicio.component';
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { PaginaPlanesComponent } from './publico/pagina-planes/pagina-planes.component';
+import { PerfilComponent } from './publico/perfil/perfil.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'pagina-planes',
     component: PaginaPlanesComponent,
+  },
+  {
+    path: 'perfil-usuario',
+    component: PerfilComponent,
   },
   {
     path: '',

@@ -8,36 +8,65 @@ import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
 import { IdentificacionTwofaComponent } from './identificacion-twofa/identificacion-twofa.component';
 import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
 import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
+import { ValidarSesionInactivaGuard } from 'src/app/guardianes/validar-sesion-inactiva.guard';
+import { ValidarSesionActivaGuard } from 'src/app/guardianes/validar-sesion-activa.guard';
+import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
+import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
+import { EditarClienteComponent } from '../parametros/cliente/editar-cliente/editar-cliente.component';
+import { EliminarClienteComponent } from '../parametros/cliente/eliminar-cliente/eliminar-cliente.component';
 
 const routes: Routes = [
   {
     path: 'identificar-usuario',
     component: IdentificacionUsuarioComponent,
+    canActivate: [ValidarSesionInactivaGuard],
   },
   {
     path: 'cambiar-clave',
     component: CambioClaveComponent,
+    canActivate: [ValidarSesionActivaGuard],
   },
   {
     path: 'recuperar-clave',
     component: RecuperarClaveComponent,
+    canActivate: [ValidarSesionInactivaGuard],
   },
   {
     path: 'cerrar-sesion',
     component: CerrarSesionComponent,
+    canActivate: [ValidarSesionActivaGuard],
   },
   {
     path: '2fa',
     component: IdentificacionTwofaComponent,
+    canActivate: [ValidarSesionInactivaGuard],
   },
   {
     path: 'registro-publico',
     component: RegistroPublicoUsuariosComponent,
+    canActivate: [ValidarSesionInactivaGuard],
   },
   {
     path: 'validar-hash-usuario-publico/:hash',
     component: ValidarHashUsuarioPublicoComponent,
+    canActivate: [ValidarSesionInactivaGuard],
   },
+  {
+    path: 'usuario-crear',
+    component: CrearUsuarioComponent
+  },
+  {
+    path: 'usuario-listar',
+    component: ListarUsuarioComponent
+  },
+  {
+    path: 'usuario-editar/:id',
+    component: EditarClienteComponent
+  },
+  {
+    path: 'usuario-eliminar/:id',
+    component: EliminarClienteComponent
+  }
 ];
 
 @NgModule({

@@ -5,6 +5,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { ConfiguracionRutasBackend } from '../config/configuracion.rutas.backend';
 import { delay } from 'rxjs';
 import { UsuarioValidadoModel } from '../modelos/usuario.validado.model';
+import { PermisoModel } from '../modelos/permiso.model';
+import { ItemMenuModel } from '../modelos/item.menu.model copy';
+import { ConfiguracionMenuLateral } from '../config/configuracion.menu';
 
 @Injectable({
   providedIn: 'root',
@@ -48,11 +51,11 @@ export class SeguridadService {
     );
   }
 
-  RegistrarUsuarioPublico(datos: any):Observable<UsuarioModel> {
+  RegistrarUsuarioPublico(datos: any): Observable<UsuarioModel> {
     return this.http.post<UsuarioModel>(`${this.urlBase}usuario-publico`, datos);
   }
 
-  ValidarHashUsuarioPublico(hash: string): Observable<boolean>{
+  ValidarHashUsuarioPublico(hash: string): Observable<boolean> {
     return this.http
       .post<boolean>(`${this.urlBase}validar-hash-usuario`, {
         codigoHash: hash,
@@ -141,15 +144,60 @@ export class SeguridadService {
     return this.datosUsuarioValidado.asObservable();
   }
 
-  validacionDeSesion() {
+  validacionDeSesion(): UsuarioValidadoModel | null {
     let ls = localStorage.getItem('datos-sesion');
     if (ls) {
       let objUsuario = JSON.parse(ls);
       this.ActualizarComportamientoUsuario(objUsuario);
+      return objUsuario;
     }
+    return null;
   }
 
   ActualizarComportamientoUsuario(datos: UsuarioValidadoModel) {
     return this.datosUsuarioValidado.next(datos);
   }
+
+  ConstruirMenu(permisos: PermisoModel[]) {
+    let menu: ItemMenuModel[] = [];
+
+    permisos.forEach((permiso) => {
+
+      let datosRuta = ConfiguracionMenuLateral.listaMenus.filter(x => x.id == permiso.idPermisos);
+      if (datosRuta.length > 0) {
+        let item = new ItemMenuModel();
+        item.idMenu = permiso.idPermisos;
+        item.ruta = datosRuta[0].ruta;
+        item.icono = datosRuta[0].icono;
+        item.texto = datosRuta[0].texto;
+        menu.push(item);
+      }
+
+    })
+    this.AlmacenarItemsMenu(menu)
+
+  }
+
+  /**
+   * 
+   * @param itemsMenu Almacena los items del menu en el localstorage
+   */
+  AlmacenarItemsMenu(itemsMenu: ItemMenuModel[]) {
+    let menuStr = JSON.stringify(itemsMenu);
+    localStorage.setItem('menu', menuStr);
+  }
+
+ /**
+  * 
+  * @returns Lista con items del menu
+  */
+  ObtenerItemsMenu(): ItemMenuModel[] {
+    let menu: ItemMenuModel[] = [];
+    let menuStr = localStorage.getItem('menu');
+    if (menuStr) {
+      menu = JSON.parse(menuStr);
+    }
+    return menu;
+  }
+
 }

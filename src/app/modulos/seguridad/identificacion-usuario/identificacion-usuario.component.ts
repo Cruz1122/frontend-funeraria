@@ -56,7 +56,7 @@ export class IdentificacionUsuarioComponent {
               if (
                 this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)
               ) {
-                console.log('Usuario identificado');
+                console.log(datos);
                 this.router.navigate(['/seguridad/2fa']);
               }
             }
