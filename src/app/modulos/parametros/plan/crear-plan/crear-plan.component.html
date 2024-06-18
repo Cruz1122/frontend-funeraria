@@ -1,1 +1,71 @@
-<p>crear-plan works!</p>
+<fieldset class="center container">
+    <legend>Creación de Productos</legend>
+    <div class="row">
+        <form class="col s12" [formGroup]="cargaArchivoFG">
+            <div class="row">
+                <div class="showImage center-align">
+                    <img *ngIf="!archivoCargado" src="/assets/img/img.jpg" class="imagenProducto" />
+                    <img *ngIf="archivoCargado" src="{{BASE_URL}}ObtenerArchivo/1/{{nombreArchivoCargado}}" class="imagenProducto" />
+                </div>
+            </div>
+            <div class="file-field input-field row">
+                <div class="btn col s3">
+                    <span>Seleccionar Archivo</span>
+                    <input (change)="CuandoSeleccionaArchivo($event)" name="image" type="file">
+                </div>
+                <div class="file-path-wrapper col s9">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <input type="button" class="btn" value="Subir Archivo" (click)="CargarArchivo()" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+      <form [formGroup]="fGroup">
+        <div class="row">
+          <div class="input-field col s3">
+            <input formControlName="nombre" class="validate" id="nombre" type="text">
+            <label for="nombre" data-error="wrong" data-success="right">Nombre</label>
+            <div class="show-errors" *ngIf="obtenerFgDatos['nombre'].errors 
+            && (obtenerFgDatos['nombre'].dirty || obtenerFgDatos['nombre'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+          </div>
+          <div class="input-field col s3">
+            <input formControlName="detalles" id="detalles" type="text">
+            <label for="detalles">Descripcion</label>
+            <div class="show-errors" *ngIf="obtenerFgDatos['detalles'].errors 
+            && (obtenerFgDatos['detalles'].dirty || obtenerFgDatos['detalles'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+          </div>
+          <div class="input-field col s3">
+            <input formControlName="cantidadBeneficiarios" id="cantidadBeneficiarios" type="number">
+            <label for="cantidadBeneficiarios">Cantidad de Beneficiarios</label>
+            <div class="show-errors" *ngIf="obtenerFgDatos['cantidadBeneficiarios'].errors 
+            && (obtenerFgDatos['cantidadBeneficiarios'].dirty || obtenerFgDatos['cantidadBeneficiarios'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+          </div>
+          <div class="input-field col s3">
+            <input formControlName="precio" id="precio" type="number">
+            <label for="precio">Precio</label>
+            <div class="show-errors" *ngIf="obtenerFgDatos['precio'].errors 
+            && (obtenerFgDatos['precio'].dirty || obtenerFgDatos['precio'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <a routerLink="/parametros/plan-listar" class="btn red">Cancelar</a>&nbsp;
+            <button (click)="GuardarRegistro()" class="btn waves-effect waves-light">Guardar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</fieldset>

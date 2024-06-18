@@ -11,6 +11,7 @@ import { EditarPlanComponent } from './plan/editar-plan/editar-plan.component';
 import { EliminarPlanComponent } from './plan/eliminar-plan/eliminar-plan.component';
 import { ListarPlanComponent } from './plan/listar-plan/listar-plan.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,
     ParametrosRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ParametrosModule { }

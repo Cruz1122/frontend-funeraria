@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ConfiguracionPaginacion } from 'src/app/config/configuracion.paginacion';
+import { ConfiguracionRutasBackend } from 'src/app/config/configuracion.rutas.backend';
 import { PlanModel } from 'src/app/modelos/plan.model';
 import { ParametrosService } from 'src/app/servicios/parametros/plan.service';
 
@@ -13,6 +14,8 @@ export class ListarPlanComponent {
   pag = 1;
   total = 0;
   registrosPorPagina = ConfiguracionPaginacion.registroPorPagina;
+  BASE_URL: String = ConfiguracionRutasBackend.urlLogica;
+
 
   constructor(
     private servicioPlan: ParametrosService

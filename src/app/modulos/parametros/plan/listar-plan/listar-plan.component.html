@@ -1,5 +1,5 @@
 <br />
-<a routerLink="/parametros/producto-agregar" class="btn">Agregar Plan</a>
+<a routerLink="/parametros/plan-agregar" class="btn">Agregar Plan</a>
 <br>
 <table>
     <thead>
@@ -18,10 +18,10 @@
             <td>{{r.detalles}}</td>
             <td>{{r.cantidadBeneficiarios}}</td>
             <td>{{r.precio}}</td>
-            <td><img src="{{r.foto}}" class="imagenListadoRegistros" /></td>
+            <td><img src="{{BASE_URL}}ObtenerArchivo/1/{{r.foto}}" class="imagenListadoRegistros" /></td>
             <td>
-                <a routerLink="/parametros/producto-editar/{{r.id}}" class="btn orange">Editar Plan</a>&nbsp;
-                <a routerLink="/parametros/producto-eliminar/{{r.id}}" class="btn red">Eliminar Plan</a>
+                <a routerLink="/parametros/plan-editar/{{r.id}}" class="btn orange">Editar Plan</a>&nbsp;
+                <a routerLink="/parametros/plan-eliminar/{{r.id}}" class="btn red">Eliminar Plan</a>
             </td>
         </tr>
         <tr>
