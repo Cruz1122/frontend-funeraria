@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ConfiguracionRutasBackend } from '../../config/configuracion.rutas.backend';
 import { ConfiguracionPaginacion } from '../../config/configuracion.paginacion';
 import { PlanModel } from '../../modelos/plan.model';
+import { PaginadorPlanModel } from 'src/app/modelos/paginador.plan.model';
 
 @Injectable({
   providedIn: 'root',
@@ -22,5 +23,10 @@ export class ParametrosService {
 
   listarPlanesTodos(): Observable<PlanModel[]> {
     return this.http.get<PlanModel[]>(`${this.urlBase}plan`);
+  }
+  listarPlanesTodosPaginados(pag:number): Observable<PaginadorPlanModel> {
+    let limit = ConfiguracionPaginacion.registroPorPagina;
+    let skip = (pag - 1) * limit;
+    return this.http.get<PaginadorPlanModel>(`${this.urlBase}plan-paginado?filter={"limit":${limit}, "skip":${skip}}`);
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfiguracionPaginacion } from 'src/app/config/configuracion.paginacion';
 import { PlanModel } from 'src/app/modelos/plan.model';
 import { ParametrosService } from 'src/app/servicios/parametros/plan.service';
 
@@ -8,7 +9,10 @@ import { ParametrosService } from 'src/app/servicios/parametros/plan.service';
   styleUrls: ['./listar-plan.component.css']
 })
 export class ListarPlanComponent {
-listarPlanes: PlanModel[] = [];
+  listarPlanes: PlanModel[] = [];
+  pag = 1;
+  total = 0;
+  registrosPorPagina = ConfiguracionPaginacion.registroPorPagina;
 
   constructor(
     private servicioPlan: ParametrosService
@@ -17,9 +21,14 @@ listarPlanes: PlanModel[] = [];
   }
 
   ngOnInit(){
-    this.servicioPlan.listarPlanesTodos().subscribe({
+    this.ListarRegistros();
+  }
+
+  ListarRegistros() {
+    this.servicioPlan.listarPlanesTodosPaginados(this.pag).subscribe({
       next:(datos) => {
-        this.listarPlanes = datos;
+        this.listarPlanes = datos.registros;
+        this.total = datos.totalRegistros;
       },
       error:(err) => {
         alert('Error leyendo la informacion de los planes.');
