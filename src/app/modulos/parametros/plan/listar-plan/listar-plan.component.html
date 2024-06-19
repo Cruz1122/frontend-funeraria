@@ -15,7 +15,7 @@
     <tbody>
         <tr *ngFor="let r of listarPlanes | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
             <td>{{r.nombre}} </td>
-            <td>{{r.detalles}}</td>
+            <td class="detalles">{{r.detalles}}</td>
             <td>{{r.cantidadBeneficiarios}}</td>
             <td>{{r.precio}}</td>
             <td><img src="{{BASE_URL}}ObtenerArchivo/1/{{r.foto}}" class="imagenListadoRegistros" /></td>

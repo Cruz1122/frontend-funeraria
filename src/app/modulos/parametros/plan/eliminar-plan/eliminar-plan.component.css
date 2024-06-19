@@ -1,0 +1,9 @@
+.imagenProducto{
+    height: auto;
+    width: 300px;
+}
+
+fieldset {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}

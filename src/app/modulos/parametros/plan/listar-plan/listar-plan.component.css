@@ -1,4 +1,7 @@
 .imagenListadoRegistros {
     width: 70px;
-    
+}
+
+.detalles {
+    max-width: 400px;
 }
