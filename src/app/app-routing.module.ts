@@ -9,7 +9,7 @@ import { PerfilComponent } from './publico/perfil/perfil.component';
 const routes: Routes = [
   {
     path: 'inicio',
-    component: InicioComponent
+    component: InicioComponent,
   },
   {
     path: 'pagina-planes',
@@ -22,40 +22,58 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'inicio'
+    redirectTo: 'inicio',
   },
   {
     path: 'seguridad',
-    loadChildren: () => import('./modulos/seguridad/seguridad.module').then(m => m.SeguridadModule)
+    loadChildren: () =>
+      import('./modulos/seguridad/seguridad.module').then(
+        (m) => m.SeguridadModule
+      ),
   },
   {
     path: 'logica-de-negocio',
-    loadChildren: () => import('./modulos/logica-de-negocio/logica-de-negocio.module').then(m => m.LogicaDeNegocioModule)
+    loadChildren: () =>
+      import('./modulos/logica-de-negocio/logica-de-negocio.module').then(
+        (m) => m.LogicaDeNegocioModule
+      ),
   },
   {
     path: 'parametros',
-    loadChildren: () => import('./modulos/parametros/parametros.module').then(m => m.ParametrosModule)
+    loadChildren: () =>
+      import('./modulos/parametros/parametros.module').then(
+        (m) => m.ParametrosModule
+      ),
   },
   {
     path: 'ventas',
-    loadChildren: () => import('./modulos/ventas/ventas.module').then(m => m.VentasModule)
+    loadChildren: () =>
+      import('./modulos/ventas/ventas.module').then((m) => m.VentasModule),
   },
   {
     path: 'reportes',
-    loadChildren: () => import('./modulos/reportes/reportes.module').then(m => m.ReportesModule)
+    loadChildren: () =>
+      import('./modulos/reportes/reportes.module').then(
+        (m) => m.ReportesModule
+      ),
   },
   {
     path: 'error-de-servidor',
-    component: ErrorDeServidorComponent
+    component: ErrorDeServidorComponent,
+  },
+  {
+    path: 'chat',
+    loadChildren: () =>
+      import('./modulos/chat/chat.module').then((m) => m.ChatModule),
   },
   {
     path: '**',
-    component: RutaNoEncontradaComponent
+    component: RutaNoEncontradaComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

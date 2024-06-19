@@ -14,6 +14,7 @@ import { ConfiguracionMenuLateral } from '../config/configuracion.menu';
 })
 export class SeguridadService {
   urlBase: string = ConfiguracionRutasBackend.urlSeguridad;
+  captchaSiteKey: string = ConfiguracionRutasBackend.claveCaptcha;
   constructor(private http: HttpClient) {
     this.validacionDeSesion();
   }
@@ -52,7 +53,10 @@ export class SeguridadService {
   }
 
   RegistrarUsuarioPublico(datos: any): Observable<UsuarioModel> {
-    return this.http.post<UsuarioModel>(`${this.urlBase}usuario-publico`, datos);
+    return this.http.post<UsuarioModel>(
+      `${this.urlBase}usuario-publico`,
+      datos
+    );
   }
 
   ValidarHashUsuarioPublico(hash: string): Observable<boolean> {
@@ -163,8 +167,10 @@ export class SeguridadService {
 
     permisos.forEach((permiso) => {
       console.log(permiso.idPermisos);
-      let datosRuta = ConfiguracionMenuLateral.listaMenus.filter(x => x.id == permiso.idPermisos);
-      
+      let datosRuta = ConfiguracionMenuLateral.listaMenus.filter(
+        (x) => x.id == permiso.idPermisos
+      );
+
       if (datosRuta.length > 0) {
         let item = new ItemMenuModel();
         item.idMenu = permiso.idPermisos;
@@ -173,14 +179,12 @@ export class SeguridadService {
         item.texto = datosRuta[0].texto;
         menu.push(item);
       }
-
-    })
-    this.AlmacenarItemsMenu(menu)
-
+    });
+    this.AlmacenarItemsMenu(menu);
   }
 
   /**
-   * 
+   *
    * @param itemsMenu Almacena los items del menu en el localstorage
    */
   AlmacenarItemsMenu(itemsMenu: ItemMenuModel[]) {
@@ -188,10 +192,10 @@ export class SeguridadService {
     localStorage.setItem('menu', menuStr);
   }
 
- /**
-  * 
-  * @returns Lista con items del menu
-  */
+  /**
+   *
+   * @returns Lista con items del menu
+   */
   ObtenerItemsMenu(): ItemMenuModel[] {
     let menu: ItemMenuModel[] = [];
     let menuStr = localStorage.getItem('menu');
@@ -201,13 +205,43 @@ export class SeguridadService {
     return menu;
   }
 
-  ObtenerTokenLocalStorage():string{
-    let ls = localStorage.getItem("datos-sesion");
+  ObtenerTokenLocalStorage(): string {
+    let ls = localStorage.getItem('datos-sesion');
     if (ls) {
       let usuario: UsuarioValidadoModel = JSON.parse(ls);
       return usuario.token!;
     } else {
-      return "";
+      return '';
     }
+  }
+
+  /* crea una funcion que almacene los datos que se le manden en el local storage */
+
+  AlmacenarDatosChat(codigo: string, usuario: string): boolean {
+    try {
+      let datosChat = { codigo, usuario };
+      let cadena = JSON.stringify(datosChat);
+      localStorage.setItem('datos-chat', cadena);
+      return true;
+    } catch (e) {
+      console.error('Error al almacenar los datos del chat:', e);
+      return false;
+    }
+  }
+
+  ObtenerDatosChat(): { codigo: string; usuario: string } | null {
+    let datos = localStorage.getItem('datos-chat');
+    if (datos) {
+      return JSON.parse(datos);
+    } else {
+      return null;
+    }
+  }
+
+  VerificarSalaChat(codigo: string): Observable<{ exists: boolean }> {
+    console.log(this.urlBase);
+    return this.http.get<{ exists: boolean }>(
+      `${this.urlBase}/check-chat-room/${codigo}`
+    );
   }
 }

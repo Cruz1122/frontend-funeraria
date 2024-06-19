@@ -1,0 +1,24 @@
+<form class="max-w-md mx-auto" [formGroup]="fGroup" (ngSubmit)="Registrarse()">
+  <div class="relative z-0 w-full mb-5 group" style="position: relative;">
+    <input type="text" formControlName="nombreUsuario" id="floating_first_name" class="input-field" placeholder=" "
+      required />
+    <label for="floating_first_name" class="floating-label">
+      Introduzca el nombre de usuario
+    </label>
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+    <input type="text" formControlName="codigo" id="floating_middle_name" class="input-field" placeholder=" " />
+    <label for="floating_middle_name" class="floating-label">
+      Codigo sala chat
+    </label>
+  </div>
+  <div class="recaptcha">
+    <ngx-recaptcha2 class="captcha" #captchaElem [siteKey]="siteKey" [useGlobalDomain]="false"
+      formControlName="recaptcha">
+    </ngx-recaptcha2>
+  </div>
+  
+  <button type="submit" class="submit-button">
+    Ingresar
+  </button>
+</form>

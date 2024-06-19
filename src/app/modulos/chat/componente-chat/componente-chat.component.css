@@ -1,0 +1,75 @@
+.max-w-md {
+  max-width: 28rem; /* 28 * 16 = 448px */
+  margin-top: 10.5%;
+  margin-bottom: 10.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10%;
+}
+
+
+.relative {
+  position: relative;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem; /* 1.25 * 16 = 20px */
+}
+
+.group {}
+
+.input-field {
+  padding-top: 0.625rem; /* 0.625 * 16 = 10px */
+  padding-bottom: 0.625rem;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  font-size: 0.875rem; /* 0.875 * 16 = 14px */
+  color: #1f2937; /* gray-900 */
+  background-color: transparent;
+  border: 0;
+  border-bottom-width: 2px;
+  border-color: #d1d5db; /* gray-300 */
+  appearance: none;
+}
+
+.input-container {
+  position: relative;
+  padding-top: 1.5rem; /* Espacio para la etiqueta flotante */
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  color: #ffffff; /* white */
+  background-color: #409E81;
+  padding: 0.625rem 1.25rem; /* 0.625 * 16 = 10px, 1.25 * 16 = 20px */
+  font-size: 0.875rem; /* 0.875 * 16 = 14px */
+  font-weight: 500;
+  border: 0;
+  border-radius: 0.2rem; /* 0.375 * 16 = 6px */
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #278A6C;
+}
