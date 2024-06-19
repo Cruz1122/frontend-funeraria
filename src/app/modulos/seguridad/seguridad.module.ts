@@ -15,6 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
 import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { CrearRolComponent } from './rol/crear-rol/crear-rol.component';
+import { EditarRolComponent } from './rol/editar-rol/editar-rol.component';
+import { EliminarRolComponent } from './rol/eliminar-rol/eliminar-rol.component';
+import { ListarRolComponent } from './rol/listar-rol/listar-rol.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     CerrarSesionComponent,
     RegistroPublicoUsuariosComponent,
     ValidarHashUsuarioPublicoComponent,
+    CrearRolComponent,
+    EditarRolComponent,
+    ListarRolComponent,
+    EliminarRolComponent,
   ],
   imports: [
     CommonModule,

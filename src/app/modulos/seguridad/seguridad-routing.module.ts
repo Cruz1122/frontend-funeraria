@@ -14,6 +14,10 @@ import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.com
 import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
 import { EditarClienteComponent } from '../parametros/cliente/editar-cliente/editar-cliente.component';
 import { EliminarClienteComponent } from '../parametros/cliente/eliminar-cliente/eliminar-cliente.component';
+import { CrearRolComponent } from './rol/crear-rol/crear-rol.component';
+import { ListarRolComponent } from './rol/listar-rol/listar-rol.component';
+import { EditarRolComponent } from './rol/editar-rol/editar-rol.component';
+import { EliminarRolComponent } from './rol/eliminar-rol/eliminar-rol.component';
 
 const routes: Routes = [
   {
@@ -66,6 +70,22 @@ const routes: Routes = [
   {
     path: 'usuario-eliminar/:id',
     component: EliminarClienteComponent
+  },
+  {
+    path: 'rol-crear',
+    component: CrearRolComponent
+  },
+  {
+    path: 'rol-listar',
+    component: ListarRolComponent
+  },
+  {
+    path: 'rol-editar/:id',
+    component: EditarRolComponent
+  },
+  {
+    path: 'rol-eliminar/:id',
+    component: EliminarRolComponent
   }
 ];
 

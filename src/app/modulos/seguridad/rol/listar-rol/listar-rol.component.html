@@ -1,0 +1,21 @@
+<br />
+<a routerLink="/seguridad/rol-crear" class="btn">Agregar Registro</a>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>comentarios</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listarRoles">
+            <td>{{r.nombre}} </td>
+            <td>{{r.comentarios}}</td>
+            <td>
+                <a routerLink="/seguridad/rol-editar/{{r._id}}" class="btn orange">Editar rol</a>&nbsp;
+                <a routerLink="/seguridad/rol-eliminar/{{r._id}}" class="btn red">Eliminar rol</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
