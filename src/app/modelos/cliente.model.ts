@@ -1,5 +1,5 @@
 export class ClienteModel {
-    id?: string;
+    id?: number;
     nombre?: string;
     apellidos?: string;
     documento?: string;

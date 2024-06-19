@@ -1,1 +1,49 @@
-<p>crear-cliente works!</p>
+<fieldset class="center container">
+    <legend>Creación de Clientes</legend>
+    <div class="row">
+      <form [formGroup]="fGroup">
+        <div class="row">
+          <div class="input-field col s6">
+            <input formControlName="nombre" class="validate" id="nombre" type="text">
+            <label for="nombre" data-error="wrong" data-success="right">Nombre</label>
+            <div class="show-errors" *ngIf="obtenerFgDatos['nombre'].errors 
+            && (obtenerFgDatos['nombre'].dirty || obtenerFgDatos['nombre'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+          </div>
+          <div class="input-field col s6">
+            <input formControlName="apellidos" id="apellidos" type="text">
+            <label for="apellidos">Apellido</label>
+            <div class="show-errors" *ngIf="obtenerFgDatos['apellidos'].errors 
+            && (obtenerFgDatos['apellidos'].dirty || obtenerFgDatos['apellidos'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+          </div>
+          <div class="input-field col s6">
+            <input formControlName="documento" id="documento" type="text">
+            <label for="documento">Documento</label>
+            <div class="show-errors" *ngIf="obtenerFgDatos['documento'].errors 
+            && (obtenerFgDatos['documento'].dirty || obtenerFgDatos['documento'].touched)">
+            <strong>Este campo es obligatorio</strong>
+            </div>
+          </div>
+          <div class="input-field col s3">
+            <label>
+                <input formControlName="estado" id="estado" type="checkbox" />
+                <span>Estado</span>
+            </label>
+            <div class="show-errors" *ngIf="obtenerFgDatos['estado'].errors 
+            && (obtenerFgDatos['estado'].dirty || obtenerFgDatos['estado'].touched)">
+                <strong>Este campo es obligatorio</strong>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <a routerLink="/parametros/plan-listar" class="btn red">Cancelar</a>&nbsp;
+            <button (click)="GuardarRegistro()" class="btn waves-effect waves-light">Guardar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</fieldset>
