@@ -140,13 +140,12 @@ export class PagoComponent {
     datos.estado = true;
     datos.fechaRegistro = new Date();
     delete datos.primerNombre,
-      delete datos.segundoNombre,
-      delete datos.primerApellido,
-      delete datos.segundoApellido,
-      delete datos.correo,
-      delete datos.telefono,
-      delete datos.lugarResidencia,
-      delete datos.modoRecuperacionCuenta;
+    delete datos.segundoNombre,
+    delete datos.primerApellido,
+    delete datos.segundoApellido,
+    delete datos.telefono,
+    delete datos.lugarResidencia,
+    delete datos.modoRecuperacionCuenta;
     delete datos.recaptcha;
     delete datos.fechaCreacion;
 

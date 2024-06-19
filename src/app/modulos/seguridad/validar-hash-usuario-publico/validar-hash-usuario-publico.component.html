@@ -1,9 +1,14 @@
-<div *ngIf="!validado" class="validacion center-align">
+<div *ngIf="!validado && !rechazado" class="validacion center-align">
     <h1>Validando...</h1>
     <h2>Espera mientras validamos tu correo electrónico.</h2>
 </div>
 
 <div *ngIf="validado" class="validacion center-align">
     <h1>Validado correctamente</h1>
-    <h2 *ngIf="validado">Ya puedes salir de esta página e iniciar sesión.</h2>
+    <h2>Ya puedes salir de esta página e iniciar sesión.</h2>
+</div>
+
+<div *ngIf="rechazado" class="validacion center-align">
+    <h1>No se ha podido validar</h1>
+    <h2>Puede que no estés en el lugar correcto.</h2>
 </div>
