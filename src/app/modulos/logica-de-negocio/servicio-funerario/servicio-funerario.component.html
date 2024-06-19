@@ -1,0 +1,20 @@
+<section class="center-align">
+    <h1>Solicitud un servicio funerario</h1>
+    <div class="center-align">
+        <div class="input-field col s4">
+            <i class="material-icons prefix">mail_outline</i>
+            <input formControlName="usuario" class="validate" id="email" type="text">
+            <label for="email" data-success="right">Ubicación</label>
+        </div>
+    </div>
+
+    <button [disabled]="isLoading" type="button"
+        (click)="solicitarServicio()">
+        <span *ngIf="!isLoading">
+            Solicitar un servicio funerario
+        </span>
+        <span *ngIf="isLoading">
+            Cargando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+        </span>
+    </button>
+</section>
