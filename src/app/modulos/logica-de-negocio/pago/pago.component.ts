@@ -93,7 +93,7 @@ export class PagoComponent {
     this.http
       .get(`${ConfiguracionRutasBackend.urlLogica}/facturacion/count`)
       .subscribe((response: any) => {
-        datos_pago_model.idFacturacion = response.count;
+        datos_pago_model.idFacturacion = response.count + 1;
         console.log(datos_pago_model);
 
         this.servicioLogica.RegistrarPago(datos_pago_model).subscribe({
@@ -120,7 +120,7 @@ export class PagoComponent {
     this.http
       .get(`${ConfiguracionRutasBackend.urlLogica}/cliente-plan/count`)
       .subscribe((response: any) => {
-        datos.idClientePlan = response.count;
+        datos.idClientePlan = response.count + 1;
         console.log(datos);
 
         this.servicioLogica.RegistrarFacturacion(datos).subscribe({

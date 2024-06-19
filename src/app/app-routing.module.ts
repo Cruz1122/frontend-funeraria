@@ -5,6 +5,7 @@ import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { PaginaPlanesComponent } from './publico/pagina-planes/pagina-planes.component';
 import { PerfilComponent } from './publico/perfil/perfil.component';
+import { PerfilAdministradorComponent } from './publico/perfil-administrador/perfil-administrador.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'perfil-usuario',
     component: PerfilComponent,
+  },
+  {
+    path: 'perfil-administrador',
+    component: PerfilAdministradorComponent,
   },
   {
     path: '',

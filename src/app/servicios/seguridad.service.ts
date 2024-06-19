@@ -215,6 +215,16 @@ export class SeguridadService {
     }
   }
 
+  ObtenerUsuarioRol(): string {
+    let ls = localStorage.getItem('datos-usuario');
+    if (ls) {
+      let usuario: UsuarioModel = JSON.parse(ls);
+      return usuario.idRol!;
+    } else {
+      return '';
+    }
+  }
+
   /* crea una funcion que almacene los datos que se le manden en el local storage */
 
   AlmacenarDatosChat(codigo: string, usuario: string): boolean {

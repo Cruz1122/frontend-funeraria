@@ -1,5 +1,5 @@
 export class ClientePlanModel {
-    id?: string;
+    id?: number;
     cuota?: string;
     precioDefinido?: number;
     fechaInicio?: string;
