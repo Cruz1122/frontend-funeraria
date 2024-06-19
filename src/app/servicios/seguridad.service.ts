@@ -199,6 +199,8 @@ export class SeguridadService {
   ObtenerItemsMenu(): ItemMenuModel[] {
     let menu: ItemMenuModel[] = [];
     let menuStr = localStorage.getItem('menu');
+    console.log(menuStr);
+
     if (menuStr) {
       menu = JSON.parse(menuStr);
     }

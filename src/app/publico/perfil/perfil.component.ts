@@ -8,5 +8,11 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
+  listaMenus: ItemMenuModel[] = [];
 
+  constructor(private servicioSeguridad: SeguridadService) {}
+
+  ngOnInit() {
+    this.listaMenus = this.servicioSeguridad.ObtenerItemsMenu();
+  }
 }

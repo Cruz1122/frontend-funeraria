@@ -8,6 +8,10 @@ import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.
 import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
 import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
+import { ListarBeneficiarioComponent } from './beneficiario/listar-beneficiario/listar-beneficiario.component';
+import { CrearBeneficiarioComponent } from './beneficiario/crear-beneficiario/crear-beneficiario.component';
+import { EliminarBeneficiarioComponent } from './beneficiario/eliminar-beneficiario/eliminar-beneficiario.component';
+import { EditarBeneficiarioComponent } from './beneficiario/editar-beneficiario/editar-beneficiario.component';
 
 const routes: Routes = [
   {
@@ -41,6 +45,22 @@ const routes: Routes = [
   {
     path: "cliente-editar/:id",
     component: EditarClienteComponent
+  },
+  {
+    path: "beneficiario-listar",
+    component: ListarBeneficiarioComponent
+  },
+  {
+    path: "beneficiario-agregar",
+    component: CrearBeneficiarioComponent
+  },
+  {
+    path: "beneficiario-eliminar/:id",
+    component: EliminarBeneficiarioComponent
+  },
+  {
+    path: "beneficiario-editar/:id",
+    component: EditarBeneficiarioComponent
   }
 ];
 

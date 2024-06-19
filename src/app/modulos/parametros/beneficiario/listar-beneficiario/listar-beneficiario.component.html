@@ -1,0 +1,38 @@
+<br />
+<a routerLink="/parametros/beneficiario-agregar" class="btn">Agregar Registro</a>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Documento</th>
+            <th>fechaRegistro</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listarBeneficiarios | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
+            <td>{{r.nombres}} </td>
+            <td>{{r.apellidos}}</td>
+            <td>{{r.numeroDocumento}}</td>
+            <td>{{r.fechaRegistro}}</td>
+            <td>
+                <a routerLink="/parametros/cliente-editar/{{r.id}}" class="btn orange">Editar cliente</a>&nbsp;
+                <a routerLink="/parametros/cliente-eliminar/{{r.id}}" class="btn red">Eliminar cliente</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <pagination-controls 
+                      (pageChange)="pag = $event; ListarRegistros()"
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente"
+                      screenReaderPaginationLabel="Navegación"
+                      screenReaderPageLabel="Página"
+                      screenReaderCurrentLabel="Página actual">
+                </pagination-controls>
+            </td>
+        </tr>
+    </tbody>
+</table>

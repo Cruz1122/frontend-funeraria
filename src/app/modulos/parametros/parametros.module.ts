@@ -12,6 +12,10 @@ import { EliminarPlanComponent } from './plan/eliminar-plan/eliminar-plan.compon
 import { ListarPlanComponent } from './plan/listar-plan/listar-plan.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrearBeneficiarioComponent } from './beneficiario/crear-beneficiario/crear-beneficiario.component';
+import { EditarBeneficiarioComponent } from './beneficiario/editar-beneficiario/editar-beneficiario.component';
+import { EliminarBeneficiarioComponent } from './beneficiario/eliminar-beneficiario/eliminar-beneficiario.component';
+import { ListarBeneficiarioComponent } from './beneficiario/listar-beneficiario/listar-beneficiario.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrearPlanComponent,
     EditarPlanComponent,
     EliminarPlanComponent,
-    ListarPlanComponent
+    ListarPlanComponent,
+    CrearBeneficiarioComponent,
+    EditarBeneficiarioComponent,
+    EliminarBeneficiarioComponent,
+    ListarBeneficiarioComponent
   ],
   imports: [
     CommonModule,
