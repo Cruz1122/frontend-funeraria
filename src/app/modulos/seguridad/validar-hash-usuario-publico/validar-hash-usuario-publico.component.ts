@@ -9,6 +9,7 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
 })
 export class ValidarHashUsuarioPublicoComponent {
   validado = false;
+  rechazado = false;
   hash: string = '';
 
   constructor(
@@ -27,9 +28,11 @@ Método de validación de hash*/
   ValidarHash() {
     this.servicioSeguridad.ValidarHashUsuarioPublico(this.hash).subscribe({
       next: (respuesta: boolean) => {
-        this.validado = respuesta;
+        this.validado = respuesta; 
+        this.rechazado = true ? !respuesta : false;
       },
-      error: (err) => {},
+      error: (err) => {
+      },
     });
   }
 }
