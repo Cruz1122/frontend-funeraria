@@ -1,1 +1,26 @@
-<p>eliminar-rol works!</p>
+<fieldset class="center container">
+    <legend>Eliminación de Rol</legend>
+    <div class="row">
+        <div class="row">
+            <div class="col s12">
+                <strong>¿Confirma la eliminación de estos datos?</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3">
+                <strong>Nombre:</strong> {{nombre}}
+            </div>
+            <div class="col s9">
+                <strong>comentarios:</strong> {{comentarios}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="row">
+                <div class="input-field col s12">
+                    <a routerLink="/seguridad/rol-listar" class="btn red">Cancelar</a>&nbsp;
+                    <button (click)="EliminarRegistro()" class="btn waves-effect waves-light">Confirmar</button>
+                </div>
+            </div>
+    </div>
+</fieldset>

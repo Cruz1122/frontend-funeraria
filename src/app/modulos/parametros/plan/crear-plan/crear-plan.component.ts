@@ -48,7 +48,7 @@ export class CrearPlanComponent {
       this.servicio.AgregarRegistro(model).subscribe({
         next: (data: PlanModel) => {
           alert("Información almacenada correctamente");
-          this.router.navigate(['/parametros/producto-listar']);
+          this.router.navigate(['/parametros/plan-listar']);
         },
         error: (err: any) => {
           alert("Ha ocurrido un error");

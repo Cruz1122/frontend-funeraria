@@ -1,1 +1,32 @@
-<p>editar-rol works!</p>
+<fieldset class="center container">
+    <legend>Edición de Clientes</legend>
+    <div class="row">
+        <form [formGroup]="fGroup">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="nombre" class="validate" id="nombre" type="text">
+                    <label for="nombre" data-error="wrong" data-success="right">Nombre</label>
+                    <div class="show-errors" *ngIf="obtenerFgDatos['nombre'].errors 
+              && (obtenerFgDatos['nombre'].dirty || obtenerFgDatos['nombre'].touched)">
+                        <strong>Este campo es obligatorio</strong>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="comentarios" id="comentarios" type="text">
+                    <label for="comentarios">Comentario</label>
+                    <div class="show-errors" *ngIf="obtenerFgDatos['comentarios'].errors 
+              && (obtenerFgDatos['comentarios'].dirty || obtenerFgDatos['comentarios'].touched)">
+                        <strong>Este campo es obligatorio</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <a routerLink="/seguridad/rol-listar" class="btn red">Cancelar</a>&nbsp;
+                        <button (click)="EditarRegistro()" class="btn waves-effect waves-light">Confirmar y
+                            editar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</fieldset>
